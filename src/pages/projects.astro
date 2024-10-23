@@ -1,0 +1,122 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Headings from "../components/Headings.astro";
+import Card from "../components/Card.astro";
+const titleH1 = "A personal take on algoritms";
+const titleH2 = "Coded Projects";
+const titleSpan = "& explorations";
+---
+
+<Layout title="PizzaPunk Project">
+  <Headings titleH1={titleH1} titleH2={titleH2} titleSpan={titleSpan} />
+  <div
+    class="sm:m-4 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6"
+  >
+    <Card
+      href="/projects/project1/"
+      title="Anisotropic Sculpted Flow"
+      imgsrc="/images/projects/webGL.png"
+      isInactive = {false}
+    />
+    <Card
+      href="/projects/project1/"
+      title="Glitch"
+      imgsrc="/images/projects/art-ipad.png"
+      isInactive = {true}
+    />
+    <Card
+      href="/projects/project1/"
+      ,
+      title="Meditation"
+      ,
+      imgsrc="/images/projects/duotones.png"
+      ,
+      isInactive = {true}
+    />
+    <Card
+      href="/projects/project1/"
+      title="Complexe dynamic Texture"
+      imgsrc="/images/projects/V6b.png"
+      isInactive = {true}
+    />
+    <Card
+      href="/projects/project1/"
+      title="Terrasses"
+      imgsrc="/images/projects/terrasses.png"
+      isInactive = {true}
+    />
+    <Card
+      href="/projects/project1/"
+      title="Diffusion"
+      imgsrc="/images/projects/diffusion.png"
+      isInactive = {true}
+    />
+    <Card
+      href="/projects/project1/"
+      title="Erebus"
+      imgsrc="/images/projects/erebus.png"
+      isInactive = {true}
+    />
+    <Card
+      href="/projects/project1/"
+      title="(uni)form"
+      imgsrc="/images/projects/(uni)form.png"
+      isInactive = {true}
+    />
+    <Card
+      href="/projects/project1/"
+      title="Metapizza"
+      imgsrc="/images/projects/MetaPizza.png"
+      isInactive = {true}
+    />
+    <Card
+      href="/projects/project1/"
+      title="Polytone"
+      imgsrc="/images/projects/polytone.png"
+      isInactive = {true}
+    />
+    <Card
+      href="/projects/project1/"
+      title="Backward Oscillations"
+      imgsrc="/images/projects/Backward-Oscillations.png"
+      isInactive = {true}
+    />
+    <Card
+      href="#"
+      title="Perfect Loops on Objkt"
+      imgsrc="/images/projects/objkt.jpg",
+      isInactive = {true}
+    />
+  </div>
+</Layout>
+
+<script is:inline>
+  gsap.from(".miniatures", {
+    opacity: 0,
+    scale: 0,
+    duration: 1,
+    y: 100,
+    stagger: 0.1,
+    ease: "bounce.out",
+  });
+
+  const elmtList = document.querySelectorAll(".miniatures");
+
+  elmtList.forEach((elmt) => {
+    gsap.set(elmt.querySelector("img"), { rotation: 90, scale: 2 });
+    elmt.addEventListener("mouseover", () => {
+      gsap.to(elmt.querySelector("img"), { scale: 1, rotation: 0 });
+    });
+    elmt.addEventListener("mouseleave", () => {
+      gsap.to(elmt.querySelector("img"), { scale: 2, rotation: -90 });
+    });
+
+    elmt.addEventListener("click", (e) => {
+      if (elmt.classList.contains('inactive')) {
+       e.preventDefault();  // Prevent the link from working if the class 'inactive' is present
+      console.log("Link is inactive");
+      return;  // Exit the function if the element is inactive
+  }
+    });
+  });
+</script>

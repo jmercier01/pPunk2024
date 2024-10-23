@@ -1,0 +1,86 @@
+---
+
+const {
+  titleEvent,
+  description,
+  idEvent,
+  idDate,
+  txtEvent,
+  txtArtWorkEvent,
+  linkArtWorkEvent,
+  imagesEvent,
+  idImages,
+  imagesAlt
+} = Astro.props;
+---
+
+<div
+  class="event-item border-b border-t border-nuit dark:border-jour first:border-t pb-2 pt-2 w-full hover:bg-accent hover:text-jour my-1" data-target={idImages}
+>
+  <div class="cursor-event flex gap-2 justify-between items-center">
+    <h3 class="w-1/3 max-sm:pl-1 text-xs md:text-base">{titleEvent}</h3>
+    <div
+    class="w-3/5 text-sm font-light font-code tracking-tighter"
+    set:html={description}
+    />
+    <div class="text-xs font-code font-normal self-end text-right md:w-[100px] pr-1">{idDate}</div>
+  
+  </div>  
+</div>
+
+<div
+  id={idEvent}
+  class="contenuEvents hidden opacity-0 flex-col gap-12  p-6 md:p-12 bg-accent text-jour"
+> 
+<div class="lg:flex lg:gap-10">
+  <!-- Textes -->
+  <div id="texts" class="flex flex-col gap-12 lg:w-1/2">
+    <div class="md:flex-row md:flex md:gap-6  ">
+      <h4 class="font-syne text-xl font-extrabold md:min-w-36 b-3">Session</h4>
+      <div
+        class="text-sm font-extralight sm:max-md:pt-2 leading-5"
+        set:html={txtEvent}
+      />
+    </div>
+
+    <div class="md:flex md:gap-6">
+      <h4 class="font-syne text-xl font-extrabold md:min-w-36 b-3">
+        Artwork
+      </h4>
+      <div
+        class="text-sm font-extralight sm:max-md:pt-2 leading-5"
+        set:html={txtArtWorkEvent}
+        />
+        {linkArtWorkEvent && (
+        <p class="text-xs"><a href={linkArtWorkEvent}>&#10151;Link Event</a></p>
+        )}
+      
+    </div>
+
+  </div>
+  <!-- Images -->
+  <div
+    class=" mt-7 xl:mt-0 md:grid md:grid-rows-2 md:grid-cols-3 gap-6 lg:w-1/2"
+    id={idImages}
+  >
+    {
+      imagesEvent.map((image, index) => (
+        <div class="bg-jour rounded-md">
+          <img
+            class="thumbnail w-full h-full p-3 object-cover mb-2 "
+            src={image}
+            data-src={image}
+            alt={`Image ${index + 1} for ${idEvent}`}
+            title={imagesAlt[index]}
+          />
+        </div>
+      ))
+    }
+  </div>
+</div>
+<button id="close-content" class="flex font-code text-xs items-start w-fit bg-nuit px-2 py-1 rounded-md">&times; Fermer</button>
+
+</div>
+
+
+

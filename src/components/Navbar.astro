@@ -1,0 +1,208 @@
+---
+const currentPath = new URL(Astro.request.url).pathname; // Récupère le chemin de la page active
+console.log(currentPath); // Affiche le chemin de la page active
+---
+
+<nav id=""
+  class="nav relative px-4 py-4 flex justify-between items-center bg-jour dark:bg-nuit"
+>
+  <a class="text-3xl font-bold leading-none" href='/'>
+    <div class="w-[63px] h-[61px]">
+      <img
+        src="../../images/logo.svg"
+        alt=""
+        class="bg-jour invert-0 dark:invert p-2 rounded-sm"
+      />
+    </div>
+  </a>
+  <div class="lg:hidden">
+    <button
+      class="navbar-burger flex items-center text-nuit dark:text-jour p-3"
+    >
+      <svg
+        class="block h-4 w-4 fill-current"
+        viewBox="0 0 20 20"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <title>Mobile menu</title>
+        <path d="M0 3h20v2H0V3zm0 6h20v2H0V9zm0 6h20v2H0v-2z"></path>
+      </svg>
+    </button>
+  </div>
+  <ul
+    class="hidden absolute top-[64px] left-[100px] transform -translate-y-1/2 lg:flex lg:mx-auto lg:items-center lg:justify-start lg:w-auto lg:space-x-2 font-code"
+  >
+    <li>
+      <a
+        class=` ${(currentPath==='/')&&'navIsActive'}  hover:font-bold hover:text-accent `
+        id="about"
+        href="/">About</a
+      >
+    </li>
+    <li class="text-gray-300">
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        fill="none"
+        stroke="currentColor"
+        class="w-4 h-4 current-fill"
+        viewBox="0 0 24 24"
+      >
+        <path
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          stroke-width="2"
+          d="M12 5v0m0 7v0m0 7v0m0-13a1 1 0 110-2 1 1 0 010 2zm0 7a1 1 0 110-2 1 1 0 010 2zm0 7a1 1 0 110-2 1 1 0 010 2z"
+        ></path>
+      </svg>
+    </li>
+    <li>
+      <a class=` ${(currentPath==='/events/')&&'navIsActive'}  hover:font-bold hover:text-accent `
+      href="/events/" id="link-updates"
+        >Updates</a
+      >
+    </li>
+    <li class="text-gray-300">
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        fill="none"
+        stroke="currentColor"
+        class="w-4 h-4 current-fill"
+        viewBox="0 0 24 24"
+      >
+        <path
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          stroke-width="2"
+          d="M12 5v0m0 7v0m0 7v0m0-13a1 1 0 110-2 1 1 0 010 2zm0 7a1 1 0 110-2 1 1 0 010 2zm0 7a1 1 0 110-2 1 1 0 010 2z"
+        ></path>
+      </svg>
+    </li>
+    <li>
+      <a class=` ${(currentPath==='/projects/')&&'navIsActive'}  hover:font-bold hover:text-accent `
+      id="link-projects" href="/projects/"
+        >Projects</a
+      >
+    </li>
+    <li class="text-gray-300">
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        fill="none"
+        stroke="currentColor"
+        class="w-4 h-4 current-fill"
+        viewBox="0 0 24 24"
+      >
+        <path
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          stroke-width="2"
+          d="M12 5v0m0 7v0m0 7v0m0-13a1 1 0 110-2 1 1 0 010 2zm0 7a1 1 0 110-2 1 1 0 010 2zm0 7a1 1 0 110-2 1 1 0 010 2z"
+        ></path>
+      </svg>
+    </li>
+    <li>
+      <a class=` ${(currentPath==='/contact/')&&'navIsActive'}  hover:font-bold hover:text-accent `
+      href="/contact/" id="link-contact"
+        >Contact</a
+      >
+    </li>
+  </ul>
+</nav>
+<div class="nav navbar-menu relative z-50 hidden">
+  <div class="navbar-backdrop fixed inset-0 bg-gray-800 opacity-25"></div>
+  <nav
+    id="menu-pop"
+    class="fixed top-0 left-0 bottom-0 flex flex-col w-5/6 max-w-sm py-6 px-6 bg-black overflow-y-auto"
+  >
+    <div class="flex items-center mb-8">
+      <a class="mr-auto text-3xl font-bold leading-none" href="/">
+        <div class="w-[63px] h-[61px]">
+          <img
+            src="../../images/logo.svg"
+            alt=""
+            class="p-0 rounded-sm invert "
+          />
+        </div>
+      </a>
+      <button class="navbar-close">
+        <svg
+          class="h-6 w-6 text-gray-400 cursor-pointer hover:text-gray-500"
+          xmlns="http://www.w3.org/2000/svg"
+          fill="none"
+          viewBox="0 0 24 24"
+          stroke="currentColor"
+        >
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="2"
+            d="M6 18L18 6M6 6l12 12"></path>
+        </svg>
+      </button>
+    </div>
+    <div class="font-code text-sm text-jour">
+      <ul>
+        <li class="mb-1">
+          <a
+            class=` ${(currentPath==='/')&&'navIsActiveMobile'}  block p-4 font-semibold hover:bg-gray-50 hover:text-accent `
+            href="/">About</a
+          >
+        </li>
+        <li class="mb-1">
+          <a
+            class=` ${(currentPath==='/events/')&&'navIsActiveMobile'}  block p-4 font-semibold hover:bg-gray-50 hover:text-accent `
+            href="/events/"
+            id="link-sm-updates">Updates</a
+          >
+        </li>
+        <li class="mb-1">
+          <a
+            class=` ${(currentPath==='/projects/')&&'navIsActiveMobile'}  block p-4 font-semibold hover:bg-gray-50 hover:text-accent `
+            href="/projects/"
+            id="link-sm-projects">Projects</a
+          >
+        </li>
+
+        <li class="mb-1">
+          <a
+            class=` ${(currentPath==='/contact/')&&'navIsActiveMobile'}  block p-4 font-semibold hover:bg-gray-50 hover:text-accent `
+            href="/contact/"
+            id="link-sm-contact">Contact</a
+          >
+        </li>
+      </ul>
+    </div>
+    <div class="mt-auto">
+      <div class="pt-6"></div>
+      <p class="my-4 text-xs text-center text-gray-400">
+        <span>Made with fucking code...</span>
+      </p>
+    </div>
+  </nav>
+</div>
+
+<script is:inline>
+  const burger = document.querySelector(".navbar-burger");
+  const menu = document.querySelector(".navbar-menu");
+
+  // BURGER
+  
+  closeMenu = function () {
+    menu.classList.toggle("hidden");
+    // gsap.from('#menu-pop',{opacity:0,duration:0.5})
+    // gsap.from('.navbar-backdrop',{opacity:0,duration:1})
+  };
+  // open
+  burger.addEventListener("click", function () {
+    closeMenu();
+  });
+
+  // close
+  const close = document.querySelector(".navbar-close");
+  const backdrop = document.querySelector(".navbar-backdrop");
+  close.addEventListener("click", function () {
+    closeMenu();
+  });
+  backdrop.addEventListener("click", function () {
+    closeMenu();
+  });
+</script>

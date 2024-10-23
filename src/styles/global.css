@@ -1,0 +1,89 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Ajout de styles globaux pour les liens */
+@layer base {
+  a:not(.nav a) {
+    @apply text-accent font-bold;
+    /* Couleur bleue et souligné */
+    transition: color 0.3s ease;
+    /* Transition douce pour le survol */
+  }
+
+  a:hover:not(.nav a:hover) {
+    @apply text-accent border-black;
+    /* Couleur différente au survol */
+  }
+
+  a:focus:not(.nav a:focus) {
+    @apply text-accent font-normal;
+    /* Anneau de focus pour l'accessibilité */
+  }
+
+  code {
+    @apply font-code font-light bg-zinc-50 dark:bg-zinc-700 text-xs leading-none inline-flex;
+  }
+
+  p,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    @apply text-balance;
+  }
+
+  ol>li {
+    @apply list-decimal list-inside
+  }
+
+  /* Lightbox container (hidden by default) */
+  .lightbox {
+    @apply hidden fixed top-0 left-0 w-full h-full justify-center items-center
+  }
+  .lightbox{
+    background-color: rgba(0, 0, 0, 0.8); /* Fond noir transparent */
+    z-index: 1000; /* Assurez-vous qu'elle soit au-dessus des autres éléments */
+  }
+
+  /* Lightbox active (class added via JavaScript when opened) */
+  .lightbox.active {
+    @apply flex
+  }
+
+  /* Image à afficher en grand */
+  .lightbox img {
+    @apply max-w-[90%] max-h-[90%] rounded-xl
+  }
+  .lightbox img {
+  }
+
+  /* Bouton de fermeture */
+  .lightbox .close {
+    @apply absolute bg-white border-0 text-sm cursor-pointer p-0 w-4 h-4 rounded-full text-black top-5 right-5
+  }
+  .lightbox .close {
+    line-height: 17px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3); /* Ombre du bouton */
+    z-index: 1001; /* Assurez-vous qu'il soit au-dessus de tout */
+    transition: background-color 0.3s ease;
+  }
+
+  .lightbox .close:hover {
+    @apply bg-accent
+  }
+  
+  .thumbnail{
+    @apply cursor-zoom-in
+  }
+  .navIsActive{
+    @apply font-bold text-accent
+  }
+  .navIsActiveMobile{
+    @apply font-bold text-accent
+  }
+  #projects hr{
+    @apply w-1/5 border-t-8 border-zinc-500 dark:border-zinc-500 mx-auto my-12 md:my-28
+  }
+}

@@ -1,0 +1,46 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Headings from '../components/Headings.astro';
+const titleH1 = "Connections";
+const titleH2 = "Contact";
+const titleSpan = "& collaborations";
+---
+
+<Layout title="PizzaPunk Contact">
+    <Headings titleH1={titleH1} titleH2={titleH2} titleSpan={titleSpan} />
+    <div id="contact" class="m-5">
+		<div
+		  class="flex justify-evenly md:justify-start gap-6 md:gap-12 mt-7 md:mt-12 md:items-center font-code tracking-tighter text-sm"
+		>
+		  <img src="/images/JM-petit.jpg" alt="" class="photo rounded-full size-32" />
+		  <p class="w-1/2" id="texts">
+			<span class="text-3xl">Connections spark new stories.</span> Reach out, and let's see where the
+			conversation takes us. Feel free to
+			<a href="https://x.com/GenerativePunk">connect with me on X</a> and
+			<a href="https://www.instagram.com/jmpizzapunk/">Instagram</a>. Check
+			out my Linktree for
+			<a href="https://linktr.ee/jmercier"
+			  >any other projects or collaborations.</a
+			>
+		  </p>
+		</div>
+	  </div>
+  
+</Layout>
+<script is:inline>
+	const tl = gsap.timeline();
+	tl.from('.photo',{
+		opacity:0,
+		// rotation:90,
+		// x:"+=100vw",
+		y:"-=50px",
+		duration:0.5,
+		ease: "bounce.out"
+	})
+	tl.from('#texts',{
+		opacity:0,
+		x: "-=1.5rem",
+		duration:0.5,
+		ease: "power3.in"
+	},"<")
+</script>

@@ -1,0 +1,135 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Event from "../layouts/Event.astro";
+import { events } from "../data/events.js";
+import Headings from "../components/Headings.astro";
+const titleH1 = "Exhibitions, teaching...";
+const titleH2 = "Updates";
+const titleSpan = "& Featuring";
+const title = "Events & updates";
+const firstEvent = events[0]; // Récupérer le premier événement
+---
+
+<Layout title={title}>
+  <Headings titleH1={titleH1} titleH2={titleH2} titleSpan={titleSpan} />
+  <div id="events" class="m-5 mt-16">
+    <div class="events-list flex-col justify-start items-start">
+      {
+        events.map((event) => (
+          <Event
+            idEvent={event.idEvent}
+            idDate ={event.idDate}
+            titleEvent={event.titleEvent}
+            description={event.description}
+            txtEvent={event.txtEvent}
+            txtArtWorkEvent={event.txtArtWorkEvent}
+            linkArtWorkEvent={event.linkArtWorkEvent}
+            imagesEvent={event.imagesEvent}
+            idImages={event.idImages}
+            imagesAlt={event.imagesAlt}
+          />
+        ))
+      }
+    </div>
+  </div>
+</Layout>
+
+<script is:inline>
+  const eventItems = document.querySelectorAll(".event-item");
+
+  eventItems.forEach((item) => {
+    let mm = gsap.matchMedia();
+    mm.add("(min-width: 800px)", () => {
+      // Gestion du hover pour les écrans > 800px
+      item.addEventListener("mouseover", function (event) {
+        const target = this.querySelector("h3");
+        gsap.to(target, {
+          x: "50px",
+          duration: 0.5,
+          ease: "power2.out",
+        });
+        this.style.cursor = 'url("/images/icon-details.jpg"), auto';
+      });
+
+      item.addEventListener("mouseout", function (event) {
+        const target = this.querySelector("h3");
+        gsap.to(target, {
+          x: 0,
+          duration: 0.5,
+          ease: "power2.out",
+        });
+        this.style.cursor = auto;
+      });
+
+      return () => {}; // Optionnel : nettoyage lorsque le viewport change
+    });
+
+    // Gestion du click pour ouvrir/fermer le contenu
+    item.addEventListener("click", function () {
+      const targetId = this.getAttribute("data-target"); // Récupère l'ID de la section cible
+      const eventExpand = document.getElementById(targetId); // Sélectionne la section à ouvrir
+
+      // Ferme toutes les autres sections avant d'ouvrir celle-ci
+      document.querySelectorAll(".contenuEvents").forEach((content) => {
+        if (content !== eventExpand) {
+          gsap.to(content, {
+            opacity: 0,
+            duration: 0.5,
+            ease: "power2.in",
+            onComplete: () => {
+              content.classList.add("hidden");
+              content.classList.remove("flex");
+            },
+          });
+        }
+      });
+
+      // Ouvre la section correspondante si elle est fermée, sinon la ferme
+      if (eventExpand.classList.contains("hidden")) {
+        eventExpand.classList.remove("hidden");
+        eventExpand.classList.add("flex");
+        gsap.to(eventExpand, {
+          opacity: 1,
+          duration: 0.5,
+          ease: "power2.out",
+        });
+      } else {
+        gsap.to(eventExpand, {
+          opacity: 0,
+          duration: 0.5,
+          ease: "power2.in",
+          onComplete: () => {
+            eventExpand.classList.add("hidden");
+            eventExpand.classList.remove("flex");
+          },
+        });
+      }
+    });
+  });
+
+  // Gestion du bouton "Fermer" pour chaque section
+  document.querySelectorAll("#close-content").forEach((button) => {
+    button.addEventListener("click", function () {
+      const eventExpand = this.closest(".contenuEvents"); // Sélectionne la section parente
+
+      gsap.to(eventExpand, {
+        opacity: 0,
+        duration: 0.5,
+        ease: "power2.in",
+        onComplete: () => {
+          eventExpand.classList.add("hidden");
+          eventExpand.classList.remove("flex");
+        },
+      });
+    });
+  });
+
+  // Animation d'entrée pour tous les items au chargement
+  gsap.from(".event-item", {
+    opacity: 0,
+    y: "+=24em",
+    duration: 1,
+    stagger: 0.1,
+    ease: "power4.out",
+  });
+</script>

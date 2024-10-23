@@ -1,9 +1,24 @@
-<!DOCTYPE html>
-<html class="dark">
+---
+import Navbar from "../components/Navbar.astro";
+import Footer from "../components/Footer.astro";
+import Theme from "../components/Theme.astro";
+import "../styles/global.css";
+
+interface Props {
+  title: string;
+}
+
+const { title } = Astro.props;
+---
+
+<!doctype html>
+<html class="{theme || 'dark'}">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Astro description" />
 
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>{title}</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -18,228 +33,79 @@
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
     />
-    
+
     <link
       rel="stylesheet"
       href="https://unpkg.com/lenis@1.1.13/dist/lenis.css"
     />
 
-
     <!-- Gsap -->
-    <script is:inline src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
-
-    <script is:inline src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/Flip.min.js"></script>
-    <script is:inline src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
-    <script is:inline src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollToPlugin.min.js"></script>
-    <script is:inline src="https://unpkg.com/lenis@1.1.13/dist/lenis.min.js"></script>
+    <script
+      is:inline
+      src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
+    <script
+      is:inline
+      src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/Flip.min.js"></script>
+    <script
+      is:inline
+      src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"
+    ></script>
+    <script
+      is:inline
+      src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollToPlugin.min.js"
+    ></script>
+    <script is:inline src="https://unpkg.com/gsap@3.12.2/dist/Flip.min.js"
+    ></script>
+    <script is:inline src="https://unpkg.com/lenis@1.1.13/dist/lenis.min.js"
+    ></script>
   </head>
 
   <body
     class="bg-jour dark:bg-nuit text-nuit dark:text-jour w-full font-poppins"
   >
-    <nav
-      class="relative px-4 py-4 flex justify-between items-center bg-jour dark:bg-nuit"
-    >
-      <a class="text-3xl font-bold leading-none" href="#">
-        <div class="w-[63px] h-[61px]">
-          <img
-            src="images/logo.svg"
-            alt=""
-            class="bg-jour invert-0 dark:invert p-2 rounded-sm"
-          />
-        </div>
-      </a>
-      <div class="lg:hidden">
-        <button
-          class="navbar-burger flex items-center text-nuit dark:text-jour p-3"
-        >
-          <svg
-            class="block h-4 w-4 fill-current"
-            viewBox="0 0 20 20"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <title>Mobile menu</title>
-            <path d="M0 3h20v2H0V3zm0 6h20v2H0V9zm0 6h20v2H0v-2z"></path>
-          </svg>
-        </button>
-      </div>
-      <ul
-        class="hidden absolute top-[64px] left-[100px] transform -translate-y-1/2 lg:flex lg:mx-auto lg:items-center lg:justify-start lg:w-auto lg:space-x-2 font-code"
-      >
-        <li>
-          <a class="text-sm text-accent font-bold" id="about" href="#">About</a>
-        </li>
-        <li class="text-gray-300">
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            fill="none"
-            stroke="currentColor"
-            class="w-4 h-4 current-fill"
-            viewBox="0 0 24 24"
-          >
-            <path
-              stroke-linecap="round"
-              stroke-linejoin="round"
-              stroke-width="2"
-              d="M12 5v0m0 7v0m0 7v0m0-13a1 1 0 110-2 1 1 0 010 2zm0 7a1 1 0 110-2 1 1 0 010 2zm0 7a1 1 0 110-2 1 1 0 010 2z"
-            />
-          </svg>
-        </li>
-        <li>
-          <a
-            class="text-sm text-gray-400 hover:text-gray-500"
-            href="#"
-            id="link-updates"
-            >Updates</a
-          >
-        </li>
-        <li class="text-gray-300">
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            fill="none"
-            stroke="currentColor"
-            class="w-4 h-4 current-fill"
-            viewBox="0 0 24 24"
-          >
-            <path
-              stroke-linecap="round"
-              stroke-linejoin="round"
-              stroke-width="2"
-              d="M12 5v0m0 7v0m0 7v0m0-13a1 1 0 110-2 1 1 0 010 2zm0 7a1 1 0 110-2 1 1 0 010 2zm0 7a1 1 0 110-2 1 1 0 010 2z"
-            />
-          </svg>
-        </li>
-        <li>
-          <a
-            class="text-sm text-gray-400 hover:text-gray-500"
-            id="link-projects"
-            href="#"
-            >Projects</a
-          >
-        </li>
-        <li class="text-gray-300">
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            fill="none"
-            stroke="currentColor"
-            class="w-4 h-4 current-fill"
-            viewBox="0 0 24 24"
-          >
-            <path
-              stroke-linecap="round"
-              stroke-linejoin="round"
-              stroke-width="2"
-              d="M12 5v0m0 7v0m0 7v0m0-13a1 1 0 110-2 1 1 0 010 2zm0 7a1 1 0 110-2 1 1 0 010 2zm0 7a1 1 0 110-2 1 1 0 010 2z"
-            />
-          </svg>
-        </li>
-
-        <li>
-          <a
-            class="text-sm text-gray-400 hover:text-gray-500"
-            href="#"
-            id="link-contact"
-            >Contact</a
-          >
-        </li>
-      </ul>
-    </nav>
-    <div class="navbar-menu relative z-50 hidden">
-      <div class="navbar-backdrop fixed inset-0 bg-gray-800 opacity-25"></div>
-      <nav
-        class="fixed top-0 left-0 bottom-0 flex flex-col w-5/6 max-w-sm py-6 px-6 bg-white border-r overflow-y-auto"
-      >
-        <div class="flex items-center mb-8">
-          <a class="mr-auto text-3xl font-bold leading-none" href="#">
-            <div class="w-[63px] h-[61px]">
-              <img
-                src="images/logo.svg"
-                alt=""
-                class="bg-jour invert-0 dark:invert p-2 rounded-sm"
-              />
-            </div>
-          </a>
-          <button class="navbar-close">
-            <svg
-              class="h-6 w-6 text-gray-400 cursor-pointer hover:text-gray-500"
-              xmlns="http://www.w3.org/2000/svg"
-              fill="none"
-              viewBox="0 0 24 24"
-              stroke="currentColor"
-            >
-              <path
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                stroke-width="2"
-                d="M6 18L18 6M6 6l12 12"
-              ></path>
-            </svg>
-          </button>
-        </div>
-        <div class="font-code">
-          <ul>
-            <li class="mb-1">
-              <a
-                class="block p-4 text-sm font-semibold text-nuit hover:bg-gray-50 hover:text-accent rounded"
-                href="#"
-                >About</a
-              >
-            </li>
-            <li class="mb-1">
-              <a
-                class="block p-4 text-sm font-semibold text-nuit hover:bg-gray-50 hover:text-accent rounded"
-                href="#"
-                id="link-sm-updates"
-                >Updates</a
-              >
-            </li>
-            <li class="mb-1">
-              <a
-                class="block p-4 text-sm font-semibold text-nuit hover:bg-gray-50 hover:text-accent rounded"
-                href="#"
-                id="link-sm-projects"
-                >Projects</a
-              >
-            </li>
-
-            <li class="mb-1">
-              <a
-                class="block p-4 text-sm font-semibold text-nuit hover:bg-gray-50 hover:text-accent rounded"
-                href="#"
-                id="link-sm-contact"
-                >Contact</a
-              >
-            </li>
-          </ul>
-        </div>
-        <div class="mt-auto">
-          <div class="pt-6"></div>
-          <p class="my-4 text-xs text-center text-gray-400">
-            <span>Made with fucking code...</span>
-          </p>
-        </div>
-      </nav>
-    </div>
-
+    <Theme />
+    <Navbar />
     <slot />
+    <Footer />
 
-    <div
-      id="footer"
-      class="mt-28 border-t border-1 border-gray-600 flex items-center m-5"
-    >
-      <i class="fa-solid fa-hand-holding-heart"></i>
-      <p class="m-5 font-code font-extralight text-xs">
-        Thank you to my collectors for your support.<br />Explore and collect my
-        NFTs (<a
-          href="https://objkt.com/users/tz1QxDQFtjzn7q851vx1McZ6DnJZtbJ8eaxc"
-          >Objkt</a
-        >,
-        <a href="https://www.fxhash.xyz/u/Jerome%20(Pizza%20Punk)">Fxhash</a>)
-        to be part of the journey!<br />
-        Bye bye...
-      </p>
+    <!-- Lightbox structure -->
+    <div class="lightbox" id="lightbox">
+      <button class="close" id="lightbox-close-btn">&times;</button>
+      <img id="lightbox-img" src="" alt="Image en grand" />
     </div>
-
     
+    <script src="/scripts/lightbox.js" defer></script>
   </body>
 </html>
+
+<script is:inline>
+  // document.addEventListener("scroll", function () {});
+
+  gsap.registerPlugin(
+    Flip,
+    ScrollTrigger,
+    ScrollToPlugin,
+    Flip
+    // EaselPlugin,
+    // TextPlugin,
+    // CustomEase
+  );
+
+  // Lenis scroll Smooth
+  const lenis = new Lenis();
+
+  // Lenis
+  function raf(time) {
+    lenis.raf(time);
+    requestAnimationFrame(raf);
+  }
+
+  requestAnimationFrame(raf);
+
+  console.log(
+    "%cP I Z Z A P U N K",
+    "background-color: black;color: white; font-size: 16px; font-weight: bold; padding:5px 25px; margin-top:20px"
+  );
+
+  console.log("%c # What is hidden cannot always be seen.", "margin-top:40px");
+</script>

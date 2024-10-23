@@ -1,0 +1,16 @@
+---
+const {titleH1} = Astro.props; 
+const {titleH2} = Astro.props; 
+const {TitleSpan} = Astro.props; 
+---
+
+<div class="relative m-5 mt-24 ">
+    <h1
+      class="text-nuit dark:text-jour text-md font-normal font-poppins"
+    >
+     {titleH1} 
+    </h1>
+    <h2 class="text-nuit dark:text-jour font-black text-4xl font-syne">
+      {titleH2}<span class="text-xl block">{TitleSpan}</span>
+    </h2>
+  </div>
