@@ -17,7 +17,7 @@ const titleSpan = "& explorations";
     class="mt-8 md:mt-40 mx-auto container md:w-3/4 flex flex-col font-extralight leading-6 md:px-8 pt-3 rounded-3xl justify-center"
   >
     <h3
-      class="font-syne text-5xl md:text-center border-accent border-t text-accent py-12  px-3 md:px-0"
+      class="font-syne text-5xl md:text-center border-accent border-t text-accent py-12 px-3 md:px-0"
     >
       {title}
       <span class="block font-code text-sm">The process behind</span>
@@ -39,17 +39,18 @@ const titleSpan = "& explorations";
       <img
         src="../../images/projects/Lights/FINAL.png"
         data-src="../../images/projects/Lights/FINAL.png"
-        alt=""
+        alt="Generative Anisotropic Sculpted Flow"
+        title="Generative Anisotropic Sculpted Flow"
         class="thumbnail mb-2"
       />
     </div>
 
-    <div
-      id="content"
-      class="max-w-prose mx-auto px-1"
-    >
+    <div id="content" class="max-w-prose mx-auto px-1">
       <!-- intro -->
-      <div id="intro" class="flex md:border-x md:border-zinc-300 md:dark:border-zinc-700 px-8">
+      <div
+        id="intro"
+        class="flex md:border-x md:border-zinc-300 md:dark:border-zinc-700 px-8"
+      >
         <p>
           <em class="text-4xl">In this piece, light becomes the storyteller.</em
           >
@@ -60,7 +61,7 @@ const titleSpan = "& explorations";
         </p>
       </div>
 
-      <hr>
+      <hr />
 
       <!-- History project -->
       <div id="history">
@@ -72,15 +73,18 @@ const titleSpan = "& explorations";
             class="thumbnail w-1/3 object-cover rounded-md"
             src="../../images/projects/Lights/pizza-punk-design-generatif-sk16-v2-08.jpg"
             data-src="../../images/projects/Lights/pizza-punk-design-generatif-sk16-v2-08.jpg"
-            alt=""
+            alt="Generative explorations in 2019 - #1"
+            title="Generative explorations in 2019 - #1"
           />
-          <p><b>This project has roots dating back to my explorations in 2019</b>, using
-          p5.js with the webGL canvas. By omitting the background() function in
-          the draw() loop, every stroke and movement on the screen was
-          preserved, creating a kind of visual trail. Combining this technique
-          with rotations, translations, and a dynamic lighting system, I was
-          able to produce some intriguing images—though they were few and far
-          between.</p>
+          <p>
+            <b>This project has roots dating back to my explorations in 2019</b
+            >, using p5.js with the webGL canvas. By omitting the background()
+            function in the draw() loop, every stroke and movement on the screen
+            was preserved, creating a kind of visual trail. Combining this
+            technique with rotations, translations, and a dynamic lighting
+            system, I was able to produce some intriguing images—though they
+            were few and far between.
+          </p>
         </div>
         <p class="font-bold my-8">Some generative designs made in 2019:</p>
         <Gallerie
@@ -88,19 +92,19 @@ const titleSpan = "& explorations";
           images={[
             {
               src: "../../images/projects/Lights/generative-design-poster-txt36-01.jpg",
-              alt: "",
+              alt: "Generative explorations in 2019 - #2",
             },
             {
               src: "../../images/projects/Lights/exports-sketch05_024.jpg",
-              alt: "",
+              alt: "Generative explorations in 2019 - #3",
             },
             {
               src: "../../images/projects/Lights/jmercierfr02-scaled.jpg",
-              alt: "",
+              alt: "Generative explorations in 2019 - #4",
             },
             {
               src: "../../images/projects/Lights/TXT-SOUND-TXT26-14.jpg",
-              alt: "",
+              alt: "Generative explorations in 2019 - #5",
             },
           ]}
         />
@@ -114,51 +118,54 @@ const titleSpan = "& explorations";
         </p>
       </div>
 
-      <hr>
+      <hr />
 
       <!-- Environnement code -->
       <div id="environment">
         <h3 class="text-4xl font-syne font-bold">
           PART 2: 2019 Ideas, Now Refined
         </h3>
-        
+
         <p>
-          The concept revolves around using a <b>lighting setup with multiple
-          colors</b> defined within a specific palette. <b>These colors are applied to
-          the environment in a rotational manner</b> , as demonstrated in the Z-axis
-          rotation animation below. Each light source follows its own distinct
-          path, contributing to the overall effect and enriching the visual
-          depth through dynamic shifts in color as the object rotates. The
-          interplay between the lights and the object creates a unique
-          generative result.  
+          The concept revolves around using a <b
+            >lighting setup with multiple colors</b
+          > defined within a specific palette. <b
+            >These colors are applied to the environment in a rotational manner</b
+          > , as demonstrated in the Z-axis rotation animation below. Each light
+          source follows its own distinct path, contributing to the overall effect
+          and enriching the visual depth through dynamic shifts in color as the object
+          rotates. The interplay between the lights and the object creates a unique
+          generative result.
         </p>
 
         <p class="mt-3">
           The color transitions are dictated by both the palette and the
           continuous rotation of the lighting system.
         </p>
-        
+
         <h4>...my old lighting system</h4>
-        
+
         <div class="flex flex-wrap my-8 bg-white">
           <img
             class="w-1/3"
             src="../../images/projects/Lights/rotationsLightsShema.png"
-            alt=""
+            alt="lighting system colors"
           />
           <img
             class="w-1/3"
             src="../../images/projects/Lights/rotationsLightsAnimation.gif"
-            alt=""
+            alt="lighting system rotation"
           />
           <img
             class="w-1/3 object-contain"
             src="../../images/projects/Lights/rotationsLights.png"
-            alt=""
+            alt="lighting system rotation XYZ"
           />
         </div>
         <p>Diagrams need no further explanation.</p>
-        <p class="text-xs italic">Notice that a maximum of 5 point lights can be active at once</p>
+        <p class="text-xs italic">
+          Notice that a maximum of 5 point lights can be active at once
+        </p>
 
         <h5 class="text-md">Coding the light system with polar coordinates</h5>
         <div>
@@ -167,8 +174,8 @@ const titleSpan = "& explorations";
               The first thing is to arrange multiple lights along the diameter
               of an imaginary circle. The technique for determining the x and y
               position of each light is well-established and thoroughly
-              explained by <strong>Daniel Shiffman</strong> in his reference work, <strong>"The Nature of
-              Code"</strong> (Chapter 3: Oscillation &#8620;
+              explained by <strong>Daniel Shiffman</strong> in his reference work,
+              <strong>"The Nature of Code"</strong> (Chapter 3: Oscillation &#8620;
               <a
                 href="https://natureofcode.com/oscillation/#polar-vs-cartesian-coordinates"
                 target="_blank">Polar vs. Cartesian Coordinates)</a
@@ -193,11 +200,10 @@ const titleSpan = "& explorations";
           <a
             href="https://editor.p5js.org/codingJM/sketches/4mUOWU1tb"
             target="_blank"
-            title="Open in p5.js editor"
+            title="Open basic code of polar coordinates in p5.js editor"
             ><img
               alt="code p5.js editor"
               src="../../images/projects/Lights/basic-polar-coord.png"
-              alt=""
             /></a
           >
           <LinkCodeSource
@@ -210,13 +216,13 @@ const titleSpan = "& explorations";
             </p>
             <a
               target="_blank"
-              title="Open in p5.js editor"
+              title="Open basic code of light system in p5.js editor"
               href="https://editor.p5js.org/codingJM/sketches/aRBYfpt6P"
               ><img
                 alt="code p5.js editor"
                 class=""
                 src="../../images/projects/Lights/capture-ligths-code.png"
-                alt=""
+                alt="Open basic code of light system in p5.js editor"
               /></a
             >
           </div>
@@ -227,13 +233,19 @@ const titleSpan = "& explorations";
           <!-- images ok -->
           <div class="flex my-8 font-code text-xs text-center gap-1 mt-8">
             <div class="w-1/3">
-              <img src="../../images/projects/Lights/rotationx.png" alt="" />
+              <img
+                src="../../images/projects/Lights/rotationx.png"
+                alt="Rotate lights around the X axis"
+              />
               <caption class="line-clamp-2"
                 >Rotate lights around the X axis</caption
               >
             </div>
             <div class="w-1/3">
-              <img src="../../images/projects/Lights/rotationy.png" alt="" />
+              <img
+                src="../../images/projects/Lights/rotationy.png"
+                alt="Rotate lights around the Y axis"
+              />
               <caption class="line-clamp-2"
                 >Rotate lights around the Y axis</caption
               >
@@ -242,7 +254,7 @@ const titleSpan = "& explorations";
               <img
                 class=""
                 src="../../images/projects/Lights/rotationz.png"
-                alt=""
+                alt="Rotate lights around the Z axis"
               />
               <caption class="line-clamp-2"
                 >Rotate lights around the Z axis</caption
@@ -311,10 +323,10 @@ const titleSpan = "& explorations";
         </div>
 
         <p class="pt-8">
-          Unlike a directional light system, as used in the example above,
-            final pieces utilizes a <b>pointLight system</b>.
-            It's enhances the contrast in terms of brightness and adds a more <strong>dramatic
-          effect</strong> to the visual output. The pointLight setup allows for more localized
+          Unlike a directional light system, as used in the example above, final
+          pieces utilizes a <b>pointLight system</b>. It's enhances the contrast
+          in terms of brightness and adds a more <strong>dramatic effect</strong
+          > to the visual output. The pointLight setup allows for more localized
           lighting, creating highlights and shadows that change dynamically as the
           object rotates. This results in a richer and more intense rendering, emphasizing
           the depth and complexity of the shapes.
@@ -331,12 +343,14 @@ const titleSpan = "& explorations";
           <img
             class="w-1/2 p-1"
             src="../../images/projects/Lights/rendu-lights0.gif"
-            alt=""
+            alt="Rotational light on immmobile objects"
+            title="Rotational light on immmobile objects"
           />
           <img
             class="w-1/2 p-1"
             src="../../images/projects/Lights/rendu-lights.gif"
-            alt=""
+            alt="Rotational light on self rotate objects"
+            title="Rotational light on self rotate objects"
           />
         </div>
         <div class="flex justify-stretch items-start">
@@ -385,8 +399,8 @@ const titleSpan = "& explorations";
             </details>
           </li>
           <li class="mb-3">
-            By <b>adding time</b> into the angle calculation of the oscillation, we
-            create motion.
+            By <b>adding time</b> into the angle calculation of the oscillation,
+            we create motion.
             <details>
               <summary>Code</summary>
               <p>
@@ -400,12 +414,13 @@ const titleSpan = "& explorations";
             <img
               class="mt-8"
               src="../../images/projects/Lights/chore0.gif"
-              alt=""
+              alt="Put on your red shoes and dance the blues"
             />
           </li>
           <li class="mb-3 mt-8">
-            By multiplying this time by an integer, we introduce <b>variations</b> in
-            the arrangement (see <a
+            By multiplying this time by an integer, we introduce <b
+              >variations</b
+            > in the arrangement (see <a
               href="https://en.wikipedia.org/wiki/Lissajous_curve"
               >Lissajous Curves</a
             >).
@@ -425,29 +440,28 @@ const titleSpan = "& explorations";
               </p>
             </details>
 
-            <div class="pt-3 flex mt-8">
-              <img
-                class="w-1/3 p-1"
-                src="../../images/projects/Lights/chore01.gif"
-                alt=""
-              />
-              <img
-                class="w-1/3 p-1"
-                src="../../images/projects/Lights/chore02.gif"
-                alt=""
-              />
-              <img
-                class="w-1/3 p-1"
-                src="../../images/projects/Lights/chore03.gif"
-                alt=""
-              />
-            </div>
+            <Gallerie
+              columns={3}
+              images={[
+                {
+                  src: "../../images/projects/Lights/chore01.gif",
+                  alt: "Dance this Lissajous curves - #1",
+                },
+                {
+                  src: "../../images/projects/Lights/chore02.gif",
+                  alt: "Dance this Lissajous curves - #2",
+                },
+                {
+                  src: "../../images/projects/Lights/chore03.gif",
+                  alt: "Dance this Lissajous curves - #3",
+                },
+              ]}
+            />
           </li>
 
           <li class="mt-8">
             By changing the 3D primitive and adding <b>internal rotation</b> to each
-            dancer (like whirling dervishes), we further enhance the
-            choreography.
+            dancer (like whirling dervishes), we further enhance the choreography.
             <details>
               <summary>Code</summary>
               <p>
@@ -459,23 +473,24 @@ const titleSpan = "& explorations";
             </details>
           </li>
         </ol>
-        <div class="pt-3 flex justify-center">
-          <img
-            class="w-1/3 p-1"
-            src="../../images/projects/Lights/chore04.gif"
-            alt=""
-          />
-          <img
-            class="w-1/3 p-1"
-            src="../../images/projects/Lights/chore05.gif"
-            alt=""
-          />
-          <img
-            class="w-1/3 p-1"
-            src="../../images/projects/Lights/chore06.gif"
-            alt=""
-          />
-        </div>
+        <Gallerie
+          columns={3}
+          images={[
+            {
+              src: "../../images/projects/Lights/chore04.gif",
+              alt: "Dance this Lissajous curves - #4",
+            },
+            {
+              src: "../../images/projects/Lights/chore05.gif",
+              alt: "Dance this Lissajous curves - #5",
+            },
+            {
+              src: "../../images/projects/Lights/chore06.gif",
+              alt: "Dance this Lissajous curves - #6",
+            },
+          ]}
+        />
+
         <LinkCodeSource
           link="https://editor.p5js.org/codingJM/sketches/epTX2lO_w"
         />
@@ -488,8 +503,8 @@ const titleSpan = "& explorations";
           In this project, I explore the idea of drawing without erasing,
           leveraging p5.js and WebGL to create visuals that continuously build
           upon each other. By <b>omitting the background() function</b> in the draw()
-          loop, each stroke and movement leaves a trace on the canvas, creating
-          a layered and evolving composition.
+          loop, each stroke and movement leaves a trace on the canvas, creating a
+          layered and evolving composition.
         </p>
 
         <h5>Some adjustements:</h5>
@@ -499,44 +514,42 @@ const titleSpan = "& explorations";
           <li>Adding a Perlin Noise</li>
         </ol>
 
-
         <Gallerie
           columns={4}
           images={[
             {
               src: "../../images/projects/Lights/noise2.png",
-              alt: "",
+              alt: "Adding Noise #1",
             },
             {
               src: "../../images/projects/Lights/noise3.png",
-              alt: "",
+              alt: "Adding Noise #2",
             },
             {
               src: "../../images/projects/Lights/noise4.png",
-              alt: "",
+              alt: "Adding Noise #3",
             },
             {
               src: "../../images/projects/Lights/noise5.png",
-              alt: "",
+              alt: "Adding Noise #4",
             },
           ]}
         />
-        
-        
+
         <LinkCodeSource
           link="https://editor.p5js.org/codingJM/sketches/uau7hrsiA"
         />
         <p>
           <em class="text-2xl"
-          >At this stage, we achieve a more organic choreography with Perlin
-          noise, while maintaining geometric continuity through oscillating
-          curves.</em
+            >At this stage, we achieve a more organic choreography with Perlin
+            noise, while maintaining geometric continuity through oscillating
+            curves.</em
           >
         </p>
       </div>
-      
-      <hr>
-      
+
+      <hr />
+
       <div id="harmony" class="">
         <h3 class="text-4xl font-syne font-bold">
           PART 3: Looking for harmony
@@ -544,14 +557,15 @@ const titleSpan = "& explorations";
         <h4>Let's make it more organic</h4>
         <p>Shifting the composition and adding an organic rythm:</p>
         <p>
-          Keeping in mind that <strong>I’m choreographing a ballet of 3D objects</strong>, I add
-          movement to all my dancers, initially in a straight line from top to
-          bottom. I also adjust the oscillation speeds and Perlin noise to sync
-          them with the timeline (nbFrames).
+          Keeping in mind that <strong
+            >I’m choreographing a ballet of 3D objects</strong
+          >, I add movement to all my dancers, initially in a straight line from
+          top to bottom. I also adjust the oscillation speeds and Perlin noise
+          to sync them with the timeline (nbFrames).
         </p>
         <details>
           <summary>Code</summary>
-          
+
           <code class="p-3 my-3">
             // More times<br />
             // A cycle of 900 keyframes<br />
@@ -583,13 +597,13 @@ const titleSpan = "& explorations";
             in a cycle<br />
             // NBX and NBY are random values for the number of rotations during a
             cycle<br />
-            
+
             x = cos(i * nbX + t * TAU) * n;<br />
             y = sin(i * nbY + t * TAU) * n;<br />
             // We add another noise for each object to interrupt the path and create
             rhythm.<br />
             // The size of the objects decreases over time<br />
-            
+
             if (noise(i * 100 + t * TAU) % 0.1 &gt; 0.005) &#x7B;<br />
             &nbsp;&nbsp;ellipsoid(<br />
             &nbsp;&nbsp;&nbsp;&nbsp;width * 0.0125 - t * width * 0.0125,<br />
@@ -603,23 +617,24 @@ const titleSpan = "& explorations";
         <LinkCodeSource
           link="https://editor.p5js.org/codingJM/sketches/98iNXfp1G"
         />
-        <div class="flex mt-8">
-          <img
-            class="w-1/3 p-1"
-            src="../../images/projects/Lights/harmony01.png"
-            alt=""
-          />
-          <img
-            class="w-1/3 p-1"
-            src="../../images/projects/Lights/harmony02.png"
-            alt=""
-          />
-          <img
-            class="w-1/3 p-1"
-            src="../../images/projects/Lights/harmony03.png"
-            alt=""
-          />
-        </div>
+        <Gallerie
+          columns={3}
+          images={[
+            {
+              src: "../../images/projects/Lights/harmony01.png",
+              alt: "Adding Noise #1",
+            },
+            {
+              src: "../../images/projects/Lights/harmony02.png",
+              alt: "Adding Noise #2",
+            },
+            {
+              src: "../../images/projects/Lights/harmony03.png",
+              alt: "Adding Noise #3",
+            },
+          ]}
+        />
+
         <p>
           <em class="text-xl"
             >Now we’re talking, this is looking pretty good!</em
@@ -627,19 +642,20 @@ const titleSpan = "& explorations";
         </p>
 
         <h5>Things to add</h5>
-        
+
         <ol>
-          <li>Use of a <b>monochrome</b> palette +  <b>one random color</b></li>
+          <li>Use of a <b>monochrome</b> palette + <b>one random color</b></li>
           <li><b>Fine-tuning</b> of lighting composed of points light</li>
           <li>Addition of a <b>non-linear progression</b> in the movement</li>
           <li><b>Rotation of the movement system</b></li>
           <li>Adding <b>noise</b> to the <b>length of the ellipses</b></li>
         </ol>
 
-        <h4>
-          And after endless refinements (several months)
-        </h4>
-        <p class="my-8">After countless tweaks, long nights of adjustments and testing, I managed to find the optimal settings.</p>
+        <h4>And after endless refinements (several months)</h4>
+        <p class="my-8">
+          After countless tweaks, long nights of adjustments and testing, I
+          managed to find the optimal settings.
+        </p>
 
         <!-- <p>V3</p> -->
         <Gallerie
@@ -695,25 +711,37 @@ const titleSpan = "& explorations";
             },
           ]}
         />
-
       </div>
 
-      <hr>
+      <hr />
 
       <div id="outro" class="">
         <h3 class="text-4xl">Final Reflections</h3>
         <p>
-          By combining randomness, precise control over movement, and an evolving palette of colors and lights, I aim to create an experience that feels both organic and dynamic. In many ways, it’s a journey to express something deeply felt, something that only the design of the form itself can capture—an intangible sensation that emerges as the shapes and patterns come to life, revealing what words alone cannot convey.
+          By combining randomness, precise control over movement, and an
+          evolving palette of colors and lights, I aim to create an experience
+          that feels both organic and dynamic. In many ways, it’s a journey to
+          express something deeply felt, something that only the design of the
+          form itself can capture—an intangible sensation that emerges as the
+          shapes and patterns come to life, revealing what words alone cannot
+          convey.
         </p>
-        <p class="my-4">If you enjoy this project, you can acquire <a href="https://www.fxhash.xyz/u/Jerome%20(Pizza%20Punk)"> exclusive edition as an NFT on FXHash</a>. Each generated NFT is unique and carries with it a little piece of me, woven into the code and design.</p>
-        <p class="mt-24"><a href="/projects/">Back to Projects</a></p>
+        <p class="my-4">
+          If you enjoy this project, you can acquire <a
+            href="https://www.fxhash.xyz/u/Jerome%20(Pizza%20Punk)"
+          >
+            exclusive edition as an NFT on FXHash</a
+          >. Each generated NFT is unique and carries with it a little piece of
+          me, woven into the code and design.
+        </p>
+        <p class="mt-24"><a href="/projects/">⇱ Back to Projects</a></p>
       </div>
     </div>
   </div>
   <div>
     <img
       id="ppunk"
-      class="hidden md:absolute md:block object-contain mix-blend-overlay rounded-lg top-80 right-0 -z-10 rotate-12 skew-y-3 "
+      class="hidden md:absolute md:block object-contain mix-blend-overlay rounded-lg top-80 left-52 scale-125 -z-10 -rotate-6 -skew-y-3"
       src="../../../images/logo.svg"
       alt=""
     />

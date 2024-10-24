@@ -43,7 +43,7 @@
     @apply hidden fixed top-0 left-0 w-full h-full justify-center items-center
   }
   .lightbox{
-    background-color: rgba(0, 0, 0, 0.8); /* Fond noir transparent */
+    background-color: rgba(0, 0, 0, .95); /* Fond noir transparent */
     z-index: 1000; /* Assurez-vous qu'elle soit au-dessus des autres éléments */
   }
 
@@ -56,12 +56,13 @@
   .lightbox img {
     @apply max-w-[90%] max-h-[90%] rounded-xl
   }
-  .lightbox img {
+  .lightbox p{
+    @apply absolute font-code text-zinc-500 left-[50%] translate-x-[-50%] text-xs bottom-4 text-center 
   }
-
+  
   /* Bouton de fermeture */
   .lightbox .close {
-    @apply absolute bg-white border-0 text-sm cursor-pointer p-0 w-4 h-4 rounded-full text-black top-5 right-5
+    @apply absolute bg-white border-0 text-xl cursor-pointer p-0 w-8 h-8 rounded-full text-black top-7 right-5
   }
   .lightbox .close {
     line-height: 17px;
