@@ -6,16 +6,18 @@ import Lightbox from "../components/LightBox.astro"
 import "../styles/global.css";
 interface Props {
   title: string;
+  description: string;
 }
 
 const { title } = Astro.props;
+const { description } = Astro.props;
 ---
 
 <!doctype html>
-<html class="{theme || 'dark'}">
+<html class="{theme || 'dark'} overflow-hidden">
   <head>
     <meta charset="UTF-8" />
-    <meta name="description" content="Astro description" />
+    <meta name="description" content={description}>
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>{title}</title>
@@ -61,7 +63,7 @@ const { title } = Astro.props;
   </head>
 
   <body
-    class="bg-jour dark:bg-nuit text-nuit dark:text-jour w-full font-poppins"
+    class="bg-jour dark:bg-nuit text-nuit dark:text-jour w-full font-poppins overflow-hidden"
   >
     <Theme />
     <Navbar />

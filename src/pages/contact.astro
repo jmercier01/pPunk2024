@@ -1,46 +1,88 @@
 ---
-import Layout from '../layouts/Layout.astro';
-import Headings from '../components/Headings.astro';
-const titleH1 = "Connections";
-const titleH2 = "Contact";
-const titleSpan = "& collaborations";
+import Layout from "../layouts/Layout.astro";
+import Headings from "../components/Headings.astro";
+const titleH1 = "Contact";
+const titleH2 = "About";
+const titleSpan = "&#38; collaborations";
 ---
 
-<Layout title="PizzaPunk Contact">
-    <Headings titleH1={titleH1} titleH2={titleH2} titleSpan={titleSpan} />
-    <div id="contact" class="m-5">
-		<div
-		  class="flex justify-evenly md:justify-start gap-6 md:gap-12 mt-7 md:mt-12 md:items-center font-code tracking-tighter text-sm"
-		>
-		  <img src="/images/JM-petit.jpg" alt="" class="photo rounded-full size-32" />
-		  <p class="w-1/2" id="texts">
-			<span class="text-3xl">Connections spark new stories.</span> Reach out, and let's see where the
-			conversation takes us. Feel free to
-			<a href="https://x.com/GenerativePunk">connect with me on X</a> and
-			<a href="https://www.instagram.com/jmpizzapunk/">Instagram</a>. Check
-			out my Linktree for
-			<a href="https://linktr.ee/jmercier"
-			  >any other projects or collaborations.</a
-			>
-		  </p>
-		</div>
-	  </div>
-  
+<Layout
+  title="PizzaPunk Contact Jérôme Mercier"
+  description="Learn more about my journey in generative design, digital art, and creative technology. Get in touch for collaborations, inquiries, or to discuss innovative projects merging art and code."
+>
+  <Headings titleH1={titleH1} titleH2={titleH2} titleSpan={titleSpan} />
+  <div id="contact" class="m-5">
+    <div
+      class="flex flex-col-reverse md:flex-row md:justify-start gap-6 md:gap-12 mt-7 md:mt-12 md:items-end text-balance"
+    >
+      
+      <div class="md:w-1/2 text-pretty" id="texts">
+        <h3 class="text-3xl">Behind the Code</h3>
+		<h4 class="text-xl">Explore My Branding and Professional Web Design Work</h4>
+        <p class="text-balance my-8">
+          In addition to generative art, I specialize for more than 25 years in <strong>brand graphic design</strong>
+          and <strong>professional website creation</strong>. My approach combines a strong
+          visual identity with effective design principles to bring brands to
+          life and create memorable online experiences. To see my latest
+          branding and web design projects, visit my Behance portfolio:
+          <a
+            href="https://www.behance.net/jmercier01"
+            target="_blank"
+            rel="noopener noreferrer">View my work on Behance</a
+          >.
+        </p>
+        <p class="text-balance my-8">
+          As an <strong
+		  >instructor in design and SEO</strong
+          >, I’m dedicated to helping others navigate and leverage digital
+          spaces effectively.
+        </p>
+		<ul class="text-xs mb-8">
+			<li><i class="fa-regular fa-file"></i> <a href="/public/files/CV2024.pdf">Download my Resume</a></strong
+			> to learn more about my experience</li></ul>
+
+        <h3 class="text-3xl">Connections spark new stories.</h3>
+        <p class="my-8 text-sm">
+          Reach out, and let's see where the conversation takes us. Feel free to
+          <a href="https://x.com/GenerativePunk">connect with me on X</a> and
+          <a href="https://www.instagram.com/jmpizzapunk/">Instagram</a>. Check
+          out my Linktree for
+          <a href="https://linktr.ee/jmercier"
+            >any other stuff.</a>
+        </p>
+      </div>
+	  <img
+        src="/images/JM-petit.jpg"
+        alt=""
+        class="photo rounded-full md:size-1/4"
+      />
+    </div>
+  </div>
 </Layout>
+<style>
+	strong{
+		font-style:oblique;
+		font-weight: normal;
+		font-size: larger;
+	}
+</style>
 <script is:inline>
-	const tl = gsap.timeline();
-	tl.from('.photo',{
-		opacity:0,
-		// rotation:90,
-		// x:"+=100vw",
-		y:"-=50px",
-		duration:0.5,
-		ease: "bounce.out"
-	})
-	tl.from('#texts',{
-		opacity:0,
-		x: "-=1.5rem",
-		duration:0.5,
-		ease: "power3.in"
-	},"<")
+  const tl = gsap.timeline();
+  tl.from(".photo", {
+    delay: 0.25,
+    opacity: 0,
+    y: "-=100vh",
+    duration: 1,
+    ease: "bounce.out",
+  });
+  tl.from(
+    "#texts",
+    {
+      opacity: 0,
+      x: "-=1.5rem",
+      duration: 0.5,
+      ease: "power3.in",
+    },
+    "<"
+  );
 </script>

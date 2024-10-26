@@ -3,6 +3,10 @@
 @tailwind utilities;
 
 /* Ajout de styles globaux pour les liens */
+html, body {
+  overflow-x: hidden;
+}
+
 @layer base {
   a:not(.nav a) {
     @apply text-accent font-bold;
@@ -11,13 +15,14 @@
     /* Transition douce pour le survol */
   }
 
-  a:hover:not(.nav a:hover) {
-    @apply text-accent border-black;
+  a:hover:not(.nav a:hover)
+  a:hover:not(#cards a:hover) {
+    @apply text-accent underline;
     /* Couleur différente au survol */
   }
 
   a:focus:not(.nav a:focus) {
-    @apply text-accent font-normal;
+    @apply text-accent font-bold ;
     /* Anneau de focus pour l'accessibilité */
   }
 
@@ -31,11 +36,15 @@
   h4,
   h5,
   h6 {
-    @apply text-balance;
+    @apply text-balance max-w-prose;
   }
 
   ol>li {
     @apply list-decimal list-inside
+  }
+
+  #navBarNavMobile,#navBarNav{
+    @apply uppercase font-medium text-sm;
   }
 
   /* Lightbox container (hidden by default) */
@@ -57,7 +66,7 @@
     @apply max-w-[90%] max-h-[90%] rounded-xl
   }
   .lightbox p{
-    @apply absolute font-code text-zinc-500 left-[50%] translate-x-[-50%] text-xs bottom-4 text-center 
+    @apply absolute font-code text-jour px-5 py-1 border-zinc-500 border-l border-r left-[50%] translate-x-[-50%] text-xs bottom-4 text-center 
   }
   
   /* Bouton de fermeture */
@@ -86,5 +95,11 @@
   }
   #projects hr{
     @apply w-1/5 border-t-8 border-zinc-500 dark:border-zinc-500 mx-auto my-12 md:my-28
+  }
+  #projects ul{
+    @apply my-3
+  }
+  #projects li{
+    @apply list-disc list-inside
   }
 }

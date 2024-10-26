@@ -4,18 +4,18 @@ import Headings from "../components/Headings.astro";
 import Card from "../components/Card.astro";
 const titleH1 = "A personal take on algoritms";
 const titleH2 = "Coded Projects";
-const titleSpan = "& explorations";
+const titleSpan = "&#38; explorations";
 ---
 
-<Layout title="PizzaPunk Project">
+<Layout title="Generative Design Projects by Pizza Punk" description="Explore my generative design projects, showcasing the creative possibilities of code, 3D animations, and Web3. Dive into unique creations that merge digital aesthetics with technological innovation, each reflecting my expertise in digital art and interactive design.">
   <Headings titleH1={titleH1} titleH2={titleH2} titleSpan={titleSpan} />
-  <div
+  <div id="cards"
     class="sm:m-4 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6"
   >
     <Card
       href="/projects/project1/"
       title="Anisotropic Sculpted Flow"
-      imgsrc="/images/projects/webGL.png"
+      imgsrc="/images/projects/final06.png"
       isInactive = {false}
     />
     <Card

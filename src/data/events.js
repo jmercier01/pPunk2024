@@ -4,7 +4,7 @@ export const events = [
       idDate: '2021 2024',
       titleEvent: 'Teacher Generative Design - Campus Ynov',
       description: 'Educator specializing in generative design.',
-      txtEvent: `<p>I offer a collection of around <b>40 courses (500h/years,more than 300 students, 10 schools)</b> tailored specifically for creative individuals who have no prior coding experience. These courses are designed to introduce non-programmers to <b>the world of generative design</b>, covering topics like creative coding, algorithms, recursion, and more, all presented in an accessible and engaging way.</p>`,
+      txtEvent: `<p>I offer a collection of around <b>40 courses (500h/years, more than 300 students, 10 schools)</b> tailored specifically for creative individuals who have no prior coding experience. These courses are designed to introduce non-programmers to <b>the world of generative design</b>, covering topics like creative coding, algorithms, recursion, and more, all presented in an accessible and engaging way.</p>`,
       txtArtWorkEvent : `<p>The provided code examples have enabled <b>students to create hundreds of unique designs</b>. The most exciting and visually striking creations have been compiled into a dedicated file, showcasing the impressive results achieved by the students.</p>`,
       linkArtWorkEvent: '',
       imagesEvent: [
@@ -54,7 +54,12 @@ export const events = [
         "../../images/events/pragues/IMG_4629_4.JPG"
       ],
       idImages: 'ETH',
-      imagesAlt : []
+      imagesAlt : [
+        "ETHPrague Conference 2024",
+        "ETHPrague Conference 2024",
+        "ETHPrague Conference 2024",
+        "ETHPrague Conference 2024"
+      ]
     },
     {
         idEvent: 'Berlin',
@@ -91,7 +96,13 @@ export const events = [
           
         ],
         idImages: 'between',
-        imagesAlt : []
+        imagesAlt : [
+          "Onchain Art Day of the Berlin Blockchain Week",
+          "Onchain Art Day of the Berlin Blockchain Week",
+          "Onchain Art Day of the Berlin Blockchain Week",
+          "Onchain Art Day of the Berlin Blockchain Week",
+          "Onchain Art Day of the Berlin Blockchain Week",
+        ]
       },
       {
         idEvent: 'DNA',
@@ -107,7 +118,11 @@ export const events = [
           "../../images/events/parasilodie03.png",
         ],
         idImages: 'DNA',
-        imagesAlt : []
+        imagesAlt : [
+          "Digital Arts Festival",
+          "Digital Arts Festival",
+          "Digital Arts Festival",
+        ]
       },
       {
         idEvent: 'FWD',
@@ -134,7 +149,9 @@ export const events = [
           "../../images/events/coimbra2020.jpg",
         ],
         idImages: 'Coimbra',
-        imagesAlt : []
+        imagesAlt : [
+          "Poster exhibition"
+        ]
       },
       
     // Ajoutez plus d'événements ici...

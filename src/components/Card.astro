@@ -12,7 +12,7 @@ console.log({smallImgSrc})
 ---
 
 <div class=`miniatures grayscale-[25%] bg-nuit dark:bg-jour sm:rounded-t-xl sm:rounded-b-xl overflow-hidden ${isInactive&&'inactive'} `>
-	<a href={href} class="">
+	<a href={href} class=`${isInactive&&'cursor-not-allowed'}`>
 	  <img src={smallImgSrc} class="object-cover aspect-video scale-90" />
 	  <!-- <span class="text-xs text-nuit text-center font-light">soon</span> -->
 	  <h2 class="lineClamp leading-8 text-center bg-nuit text-jour dark:bg-jour dark:text-nuit font-code text-xs sm:rounded-b-xl">
@@ -29,6 +29,7 @@ console.log({smallImgSrc})
 		overflow: hidden;
 	}
 	.inactive{
+		cursor: not-allowed;
 		/* filter:  grayscale(80%); */
 	}
 </style>
