@@ -27,7 +27,7 @@ html, body {
   }
 
   code {
-    @apply font-code font-light bg-zinc-50 dark:bg-zinc-700 text-xs leading-none inline-flex;
+    @apply font-code font-light bg-zinc-50 dark:bg-zinc-700 md:text-xs leading-none inline-flex;
   }
 
   p,
@@ -66,7 +66,7 @@ html, body {
     @apply max-w-[90%] max-h-[90%] rounded-xl
   }
   .lightbox p{
-    @apply absolute font-code text-jour px-5 py-1 border-zinc-500 border-l border-r left-[50%] translate-x-[-50%] text-xs bottom-4 text-center 
+    @apply absolute font-code text-jour px-5 py-1 border-zinc-500 border-l border-r left-[50%] translate-x-[-50%] md:text-xs bottom-4 text-center 
   }
   
   /* Bouton de fermeture */

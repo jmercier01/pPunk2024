@@ -14,7 +14,7 @@ console.log({smallImgSrc})
 <div class=`miniatures grayscale-[25%] bg-nuit dark:bg-jour sm:rounded-t-xl sm:rounded-b-xl overflow-hidden ${isInactive&&'inactive'} `>
 	<a href={href} class=`${isInactive&&'cursor-not-allowed'}`>
 	  <img src={smallImgSrc} class="object-cover aspect-video scale-90" />
-	  <!-- <span class="text-xs text-nuit text-center font-light">soon</span> -->
+	  
 	  <h2 class="lineClamp leading-8 text-center bg-nuit text-jour dark:bg-jour dark:text-nuit font-code text-xs sm:rounded-b-xl">
 		{isInactive?<i class="text-red-600 fa-solid fa-eye-slash"></i>:<i class="text-green-600 fa-solid fa-eye animate-ping"></i>} {title} {isInactive&&<span class="text-xs text-nuit text-center font-light">Coming Soon</span>}
 	  </h2>
