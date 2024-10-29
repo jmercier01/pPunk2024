@@ -2,7 +2,7 @@
 import Layout from "../layouts/Layout.astro";
 ---
 
-<Layout title="PizzaPunk" description="Pizza Punk Generative Design by Jerome Mercier">
+<Layout title="PizzaPunk" description="Pizza Punk Generative Design by Jerome Mercier" type="website">
   <div
     id="intro"
     class="w-full min-h-[70vh] flex flex-col gap-1 justify-center items-center text-[3vw] font-syne font-black text-jour text-center m-0"
@@ -17,9 +17,8 @@ import Layout from "../layouts/Layout.astro";
       alt=""
     />
     <h2 class="z-50 drop-shadow-md text-jour"  id="mercier">GENERATIVE DESIGN</h2>
-    <div class="scroll text-sm relative"><span class="block animate-bounce"><i class="fa-solid fa-circle-down text-4xl"></i></span></div>
+    <div id="scroll" class="scroll text-sm relative"><span class="block animate-bounce text-jour"><i class="fa-solid fa-circle-down text-4xl"></i></span></div>
     
-    <!-- <h3 class="z-50 drop-shadow-md text-lg" id="mercier">And other fucking stufs</h3> -->
   </div>
   <video
     id="background-video"
@@ -81,11 +80,12 @@ import Layout from "../layouts/Layout.astro";
 
       </div>
       <div class="">
-        <a href="https://objkt.com/tokens/hicetnunc/588102"
+        <a href="https://objkt.com/tokens/hicetnunc/588102" aria-labelledby="Objkt.com - A generated GIF loop by Pizza Punk (Jerome Mercier - twitter @GenerativePunk), France. "
           ><img
             id="lazyGif"
             src="images/lazy-GIF198-14.jpg"
             class="rounded-md invert w-full object-scale-down max-w-[640px] lg:max-w-[940px] dark:invert-0"
+            alt="A generated GIF loop by Pizza Punk (Jerome Mercier - twitter @GenerativePunk), France."
           /></a
         >
       </div>
@@ -106,6 +106,20 @@ import Layout from "../layouts/Layout.astro";
   document.getElementById("AllProjects").addEventListener("click", () => {
     window.open("/projects/", "_self");
   });
+  const scrollElement = document.getElementById('scroll');
+  scrollElement.addEventListener('click',()=>{
+    gsap.to(window,{duration:5.5,scrollTo:'#home',ease: "power4.out"})
+  })
+
+// Ajoute la classe au survol
+scrollElement.addEventListener("mouseover", (e) => {
+  scrollElement.classList.add('cursor-pointer'); // Ajoute la classe
+});
+
+// Retire la classe quand la souris quitte l'élément
+scrollElement.addEventListener("mouseout", (e) => {
+  scrollElement.classList.remove('cursor-pointer'); // Retire la classe
+});
 
   let tl = gsap.timeline({
     defaults: { ease: "power3.out" },

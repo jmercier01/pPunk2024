@@ -70,9 +70,10 @@ const {
       imagesEvent.map((image, index) => (
         <div class="bg-nuit rounded-sm overflow-hidden p-3">
           <img
-            class="thumbnail w-full h-full object-cover mb-2 p-3"
+            class="thumbnail lazy-image w-full h-full object-cover mb-2 p-3"
             src={image}
             data-src={image}
+            data-lazy={image}
             alt = {imagesAlt[index]}
             title = {imagesAlt[index]}
             

@@ -2,25 +2,76 @@
 import Navbar from "../components/Navbar.astro";
 import Footer from "../components/Footer.astro";
 import Theme from "../components/Theme.astro";
-import Lightbox from "../components/LightBox.astro"
+import Lightbox from "../components/LightBox.astro";
 import "../styles/global.css";
 interface Props {
   title: string;
   description: string;
+  type: string;
 }
 
 const { title } = Astro.props;
 const { description } = Astro.props;
+const { type } = Astro.props;
+const pageUrl = `https://pizzapunk-2024.netlify.app${Astro.url.pathname}`; 
 ---
 
 <!doctype html>
 <html class="{theme || 'dark'} overflow-x-hidden">
   <head>
     <meta charset="UTF-8" />
-    <meta name="description" content={description}>
-
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>{title}</title>
+    <!-- Basic Open Graph Tags -->
+    <meta property="og:type" content={type} />
+    <meta property="og:url" content={pageUrl} />
+    <meta
+      property="og:title"
+      content={title}
+    />
+    <meta
+      property="og:description"
+      content={description}
+    />
+    <meta
+      property="og:image"
+      content="https://pizzapunk-2024.netlify.app/pizza-punk-op.gif"
+    />
+
+    <!-- Additional Open Graph Tags for Enhanced Engagement -->
+    <meta property="og:locale" content="fr_FR" />
+    <meta property="og:site_name" content={title} />
+    <meta
+      property="og:image:alt"
+      content={description}
+    />
+    <meta property="og:image:type" content="image/jpeg" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+
+    <!-- Twitter Card Tags -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:site" content="@GenerativePunk" />
+    <meta
+      name="twitter:title"
+      content={title}
+    />
+    <meta
+      name="twitter:description"
+      content={description}
+    />
+    <meta
+      name="twitter:image"
+      content="https://pizzapunk-2024.netlify.app/pizza-punk-op.gif"
+    />
+
+    <!-- Fallback Meta Tags -->
+    <meta
+      name="description"
+      content={description}
+    />
+    
+
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -56,24 +107,32 @@ const { description } = Astro.props;
       is:inline
       src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollToPlugin.min.js"
     ></script>
-    <script is:inline src="https://unpkg.com/gsap@3.12.2/dist/Flip.min.js"
-    ></script>
     <script is:inline src="https://unpkg.com/lenis@1.1.13/dist/lenis.min.js"
     ></script>
   </head>
 
   <body
-    class="bg-jour dark:bg-nuit text-nuit dark:text-jour w-full font-poppins overflow-y-scroll overflow-x-hidden"
+    class="top bg-jour dark:bg-nuit text-nuit dark:text-jour w-full font-poppins overflow-y-scroll overflow-x-hidden relative"
   >
+    <div
+      id="backToTop"
+      class="text-3xl md:text-4xl fixed right-1 bottom-2 md:bottom-5 md:right-5 z-50 hover:animate-ping"
+    >
+      <a href="#top"
+        ><i
+          class="fa-solid fa-circle-arrow-up text-nuit dark:text-jour hover:text-accent"
+        ></i></a
+      >
+    </div>
     <Theme />
     <Navbar />
     <slot />
     <Footer />
-    <Lightbox/>
-  
+    <Lightbox />
+    
+    <script src="/scripts/lazyLoadImages.js" defer></script>
   </body>
 </html>
-
 <script is:inline>
   // document.addEventListener("scroll", function () {});
 
@@ -102,6 +161,20 @@ const { description } = Astro.props;
     "%cP I Z Z A P U N K",
     "background-color: black;color: white; font-size: 16px; font-weight: bold; padding:5px 25px; margin-top:20px"
   );
+
+  const backToTopButton = document.getElementById("backToTop");
+
+  // Initially hide the button
+  backToTopButton.style.display = "none";
+
+  window.addEventListener("scroll", () => {
+    if (window.scrollY > 100) {
+      // Show after scrolling 100px
+      backToTopButton.style.display = "block"; // Make it visible
+    } else {
+      backToTopButton.style.display = "none"; // Hide it
+    }
+  });
 
   console.log("%c # What is hidden cannot always be seen.", "margin-top:40px");
 </script>

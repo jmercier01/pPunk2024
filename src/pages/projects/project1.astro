@@ -3,82 +3,41 @@ import Layout from "../../layouts/Layout.astro";
 import Headings from "../../components/Headings.astro";
 import LinkCodeSource from "../../components/LinkCodeSource.astro";
 import Gallerie from "../../components/Gallerie.astro";
+import HeroProject from "../../components/HeroProject.astro";
+import IntroProject from "../../components/IntroProject.astro";
 const title = "Anisotropic Sculpted Flow";
 const titleH1 = "A personal take on creativity";
 const titleH2 = "Projects";
 const titleSpan = "& explorations";
+const imagePath = "../../images/projects/Lights/mixing-";
 ---
 
-<Layout title={title} description="Explore process of 'Anisotropic Sculpted Flow,' a generative art combining complex algorithms, 3D forms, and dynamic lighting. Discover the unique aesthetic of shapes sculpted through anisotropic techniques and inspired by organic flow.">
+<Layout
+title={title}
+description="Explore process of 'Anisotropic Sculpted Flow,' a generative art combining complex algorithms, 3D forms, and dynamic lighting. Discover the unique aesthetic of shapes sculpted through anisotropic techniques and inspired by organic flow." type="article"
+>
+<div class="text-right absolute top-32 left-0 px-5 bg-accent"><a class="text-xs underline" href="/projects/"><span class="text-jour">Back</span></a></div>
+
   <Headings titleH1={titleH1} titleH2={titleH2} titleSpan={titleSpan} />
-
-  <div
-    id="backToTop"
-    class="text-3xl md:text-4xl fixed right-1 bottom-2 md:bottom-5 md:right-5 z-50 hover:animate-ping"
-  >
-    <a href="#projects"
-      ><i
-        class="fa-solid fa-circle-arrow-up text-nuit dark:text-jour hover:text-accent"
-      ></i></a
-    >
-  </div>
-
-  <div
-    id="projects"
-    class="mt-8 md:mt-40 mx-auto container md:w-3/4 flex flex-col font-extralight leading-8 md:px-8 pt-3 rounded-3xl justify-center"
-  >
-    <div class="overflow-hidden">
-      <img
-        id="ppunk"
-        class="hidden md:absolute md:block object-contain mix-blend-overlay rounded-lg top-80 left-32 scale-110 -z-10 -rotate-6 -skew-y-3"
-        src="../../../images/logo.svg"
-        alt=""
-      />
-    </div>
-
-    <h3
-      id="nameProject"
-      class="font-syne font-extrabold text-4xl md:text-center text-accent pt-0 pb-12 px-3 md:px-0"
-    >
-      {title}
-      <span class="block font-code text-sm">The process behind</span>
-    </h3>
-
-    <div id="hero" class="mb-6 relative">
-      <div
-        id="details"
-        class="absolute top-8 left-1 md:left-4 font-code font-light text-xs text-jour bg-nuit opacity-90 p-3"
-      >
-        <ul class="pl-4">
-          <li>Date of release: <b>Unknown</b></li>
-          <li>Format: <b>Generative</b></li>
-          <li>Plateforme: <b>Unknown</b></li>
-          <li>Code: <b>P5.js WEBGL</b></li>
-          <li>Link: <b>Soon</b></li>
-        </ul>
-      </div>
-      <img
-        id="imgHero"
-        src="../../images/projects/Lights/V3-1/final04.png"
-        alt="Generative Anisotropic Sculpted Flow"
-        title="Generative Anisotropic Sculpted Flow"
-        class="mb-2 md:p-1 bg-jour rounded-3xl dark:bg-nuit"
-      />
-    </div>
-
-    <div id="content" class="mx-auto px-4 md:px-1">
+  <div id="projects" class="relative">
+    
+    <HeroProject
+      title={title}
+      dateRelease="Demain"
+      format="Generative"
+      plateforme="Unknow"
+      code="P5.js WEBGL"
+      src="../../images/projects/Lights/mixing-68046.webp"
+      link="Soon"
+      rep={"${imagePath}"}
+    />
+    <!-- rep="../../images/projects/Lights/V3-1/final0" -->
+    <div id="content">
       <!-- intro -->
-      <div id="intro">
-        <p class="text-4xl my-9 md:mx-auto text-center">
-          In this piece, light becomes the storyteller.
-        </p>
-        <p class="md:border-x md:border-zinc-300 md:dark:border-zinc-700 px-8 md:mx-auto">
-          A 3D form drifts slowly through time, tracing its path across unseen
-          dimensions. Each fleeting moment is captured, layering into a delicate
-          structure. As vibrant lights orbit the shape, the scene itself dances
-          unpredictably, creating a sculpture bathed in ever-shifting hues.
-        </p>
-      </div>
+      <IntroProject
+        introTitle="In this piece, light becomes the storyteller."
+        introText="A 3D form drifts slowly through time, tracing its path across unseen dimensions. Each fleeting moment is captured, layering into a delicate structure. As vibrant lights orbit the shape, the scene itself dances unpredictably, creating a sculpture bathed in ever-shifting hues."
+      />
 
       <hr />
 
@@ -93,6 +52,8 @@ const titleSpan = "& explorations";
             <li><a href="#">Looking for harmony</a></li>
             <li><a href="#">Real Time</a></li>
             <li><a href="#">Refinements</a></li>
+            <li><a href="#">Exploring Parameter Variations</a></li>
+            <li><a href="#">Mixing all together</a></li>
             <li><a href="#">Final Reflections</a></li>
           </ol>
         </details>
@@ -102,12 +63,12 @@ const titleSpan = "& explorations";
 
       <!-- History project -->
       <div id="creation">
-        <h3 class="text-4xl font-syne font-bold">What Drives the Creation</h3>
+        <h4>What Drives the Creation</h4>
         <div class="inline-flex gap-4">
           <img
             class="thumbnail w-1/3 object-cover rounded-md"
-            src="../../images/projects/Lights/pizza-punk-design-generatif-sk16-v2-08.jpg"
-            data-src="../../images/projects/Lights/pizza-punk-design-generatif-sk16-v2-08.jpg"
+            src="../../images/projects/Lights/pizza-punk-design-generatif-sk16-v2-08.webp"
+            data-src="../../images/projects/Lights/pizza-punk-design-generatif-sk16-v2-08.webp"
             alt="Generative explorations in 2019 - #1"
             title="Generative explorations in 2019 - #1"
           />
@@ -134,24 +95,24 @@ const titleSpan = "& explorations";
             </p>
           </div>
         </div>
-        <p class="font-bold my-8">Some generative designs made in 2019:</p>
+        <h5>Some generative designs made between 2019-2021:</h5>
         <Gallerie
           columns={"grid-cols-2 lg:grid-cols-4"}
           images={[
             {
-              src: "../../images/projects/Lights/generative-design-poster-txt36-01.jpg",
+              src: "../../images/projects/Lights/generative-design-poster-txt36-01.webp",
               alt: "Generative explorations in 2019 - #2",
             },
             {
-              src: "../../images/projects/Lights/exports-sketch05_024.jpg",
+              src: "../../images/projects/Lights/exports-sketch05_024.webp",
               alt: "Generative explorations in 2019 - #3",
             },
             {
-              src: "../../images/projects/Lights/jmercierfr02-scaled.jpg",
+              src: "../../images/projects/Lights/jmercierfr02-scaled.webp",
               alt: "Generative explorations in 2019 - #4",
             },
             {
-              src: "../../images/projects/Lights/TXT-SOUND-TXT26-14.jpg",
+              src: "../../images/projects/Lights/TXT-SOUND-TXT26-14.webp",
               alt: "Generative explorations in 2019 - #5",
             },
           ]}
@@ -159,7 +120,9 @@ const titleSpan = "& explorations";
 
         <p class="my-5 text-xl py-8">
           I revisited that idea, but with the goal of ensuring thatfor this new
-          generative art piece <strong>every image generated would be a visual success.</strong>
+          generative art piece <strong
+            >every image generated would be a visual success.</strong
+          >
         </p>
       </div>
 
@@ -167,7 +130,7 @@ const titleSpan = "& explorations";
 
       <!-- Environnement code -->
       <div id="link2019">
-        <h3 class="text-4xl font-syne font-bold">2019 Ideas, Now Refined</h3>
+        <h4>2019 Ideas, Now Refined</h4>
 
         <p>The concept revolves around:</p>
         <ul>
@@ -176,7 +139,8 @@ const titleSpan = "& explorations";
             palette.
           </li>
           <li>
-            Applied these colors to the environment in a <b>rotational manner</b>
+            Applied these colors to the environment in a <b>rotational manner</b
+            >
           </li>
         </ul>
         <p>
@@ -192,12 +156,12 @@ const titleSpan = "& explorations";
           continuous rotation of the lighting system.
         </p>
 
-        <h4>...my old lighting system</h4>
+        <h5 id="imgLighting">...my old lighting system</h5>
         <Gallerie
           columns="grid-cols-2 md:grid-cols-3"
           images={[
             {
-              src: "../../images/projects/Lights/rotationsLightsShema.png",
+              src: "../../images/projects/Lights/rotationsLightsShema.webp",
               alt: "lighting system colors",
             },
             {
@@ -207,276 +171,267 @@ const titleSpan = "& explorations";
           ]}
         />
         <img
-          class="rounded-md my-2"
-          src="../../images/projects/Lights/rotationsLights.png"
+          class="rounded-md my-2 w-2/3"
+          src="../../images/projects/Lights/rotationsLights.webp"
           alt="lighting system rotation XYZ"
         />
 
-        <div>
-          <p>Diagrams need no further explanation.</p>
-          <p class="text-xs italic">
-            Notice that a maximum of 5 point lights can be active at once with
-            p5.js.
+        <p>Diagrams need no further explanation.</p>
+        <p class="text-xs italic">
+          Notice that a maximum of 5 point lights can be active at once with
+          p5.js.
+        </p>
+
+        <h5>Coding the light system with polar coordinates</h5>
+
+        <div class="md:flex md:gap-4">
+          <p>
+            The first thing is to arrange multiple lights along the diameter of
+            an imaginary circle. The technique for determining the x and y
+            position of each light is well-established and thoroughly explained
+            by <strong>Daniel Shiffman</strong> in his reference work,
+            <strong>"The Nature of Code"</strong> (Chapter 3: Oscillation &#8620;
+            <a
+              href="https://natureofcode.com/oscillation/#polar-vs-cartesian-coordinates"
+              target="_blank">Polar vs. Cartesian Coordinates)</a
+            >.
           </p>
 
-          <h5 class="text-md">
-            Coding the light system with polar coordinates
-          </h5>
-          <div>
-            <div class="md:flex md:gap-4">
-              <p>
-                The first thing is to arrange multiple lights along the diameter
-                of an imaginary circle. The technique for determining the x and
-                y position of each light is well-established and thoroughly
-                explained by <strong>Daniel Shiffman</strong> in his reference work,
-                <strong>"The Nature of Code"</strong> (Chapter 3: Oscillation &#8620;
-                <a
-                  href="https://natureofcode.com/oscillation/#polar-vs-cartesian-coordinates"
-                  target="_blank">Polar vs. Cartesian Coordinates)</a
-                >.
-              </p>
+          <iframe
+            width="auto"
+            height="315"
+            class="w-full py-4"
+            src="https://www.youtube.com/embed/O5wjXoFrau4?si=wXRXEhVFvJgr7UU7"
+            title="YouTube video player"
+            frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            referrerpolicy="strict-origin-when-cross-origin"
+            allowfullscreen
+          >
+          </iframe>
+        </div>
 
-              <iframe
-                width="auto"
-                height="315"
-                class="w-full py-4"
-                src="https://www.youtube.com/embed/O5wjXoFrau4?si=wXRXEhVFvJgr7UU7"
-                title="YouTube video player"
-                frameborder="0"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                referrerpolicy="strict-origin-when-cross-origin"
-                allowfullscreen
-              >
-              </iframe>
-            </div>
-
-            <p class="mt-8">Here's the basic code</p>
-            <a
-              href="https://editor.p5js.org/codingJM/sketches/4mUOWU1tb"
-              target="_blank"
-              title="Open basic code of polar coordinates in p5.js editor"
-              ><img
-                alt="code p5.js editor"
-                src="../../images/projects/Lights/basic-polar-coord.png"
-              /></a
-            >
-            <LinkCodeSource
-              link="https://editor.p5js.org/codingJM/sketches/4mUOWU1tb"
-            />
-            <div class="md:flex md:items-center flex-row-reverse mt-8">
-              <p>
-                Instead of placing ellipses along the diameter of an imaginary
-                circle, let’s arrange directional lights around a 3D sphere.
-              </p>
-              <a
-                target="_blank"
-                title="Open basic code of light system in p5.js editor"
-                href="https://editor.p5js.org/codingJM/sketches/aRBYfpt6P"
-                ><img
-                  alt="code p5.js editor"
-                  class=""
-                  src="../../images/projects/Lights/capture-ligths-code.png"
-                  alt="Open basic code of light system in p5.js editor"
-                /></a
-              >
-            </div>
-            <LinkCodeSource
-              link="https://editor.p5js.org/codingJM/sketches/aRBYfpt6P"
-            />
-
-            <!-- images ok -->
-            <div class="flex my-8 font-code text-xs text-center gap-1 mt-8">
-              <div class="md:w-1/3">
-                <img
-                  src="../../images/projects/Lights/rotationx.png"
-                  alt="Rotate lights around the X axis"
-                />
-                <caption class="line-clamp-2"
-                  >Rotate lights around the X axis</caption
-                >
-              </div>
-              <div class="md:w-1/3">
-                <img
-                  src="../../images/projects/Lights/rotationy.png"
-                  alt="Rotate lights around the Y axis"
-                />
-                <caption class="line-clamp-2"
-                  >Rotate lights around the Y axis</caption
-                >
-              </div>
-              <div class="md:w-1/3">
-                <img
-                  class=""
-                  src="../../images/projects/Lights/rotationz.png"
-                  alt="Rotate lights around the Z axis"
-                />
-                <caption class="line-clamp-2"
-                  >Rotate lights around the Z axis</caption
-                >
-              </div>
-            </div>
-
-            <details>
-              <summary>Notes about code</summary>
-              <div class="border border-white p-10 m-2 text-sm max-w-prose">
-                <h6 class="m-0 p-0">
-                  About native variable <code>frameCount</code>
-                </h6>
-                <p>
-                  In the previous code, you might have noticed that I'm not
-                  using the native <code>frameCount()</code> function from p5.js.
-                  Instead, I start by creating my own variable <code>f = 0</code
-                  > and then I increment <code>f</code> by 1 on each frame.
-                </p>
-                <p>There are two main reasons why I do this:</p>
-                <ol>
-                  <li>
-                    <code>f</code> is shorter to type than frameCount, which can
-                    be convenient, especially in longer projects.
-                  </li>
-                  <li>
-                    I can reset <code>f</code> to 0 whenever I want. With the native
-                    <code>frameCount()</code>, it's a built-in function that
-                    always increases from 0 and you can't reset it. But
-                    sometimes, I want the counter to restart, and using my own <code
-                      >f</code
-                    >
-                    variable gives me that flexibility.
-                  </li>
-                </ol>
-              </div>
-              <div class="border border-white p-10 m-2 text-sm max-w-prose">
-                <h6 class="mt-0 pt-0">
-                  About <code>t = (f / nbFrames) % 1</code>
-                </h6>
-                <p>
-                  the variable <code>t</code> is used to control how many complete
-                  rotations the lights make over a specific period of time, which
-                  is determined by the number of keyframes (<code>nbFrames</code
-                  >).
-                </p>
-                <ul class="list-disc list-inside">
-                  <li>
-                    This formula ensures that <code>t</code> is always a value between
-                    0 and 1. It essentially measures how far along the animation
-                    is, relative to the total number of frames.
-                  </li>
-                  <li>
-                    As <code>f</code> (my custom frame counter) increases with each
-                    frame, <code>t</code> smoothly moves from 0 to 1, then resets
-                    back to 0 when <code>f</code> completes a full cycle. This gives
-                    a looping effect.
-                  </li>
-                  <li>
-                    This setup ensures that one full rotation of the lights
-                    occurs over a span of <code>nbFrames</code> frames. So, if
-                    <code>nbFrames = 90</code>, it means the lights will
-                    complete a full rotation every 90 frames, creating a smooth
-                    looping animation
-                  </li>
-                </ul>
-              </div>
-            </details>
-          </div>
-          <div>
-            <p class="pt-12">
-              Unlike a directional light system, as used in the example above,
-              final pieces utilizes a <b>pointLight system</b>.
-            </p>
-            <p class="text-sm mt-3 leading-7">
-              It's enhances the contrast in terms of brightness and adds a more <strong
-                >dramatic effect</strong
-              > to the visual output. The pointLight setup allows for more localized
-              lighting, creating highlights and shadows that change dynamically as
-              the object rotates. This results in a richer and more intense rendering,
-              emphasizing the depth and complexity of the shapes.
-            </p>
-            <h5>3D Objects Rendering (Colors Shaped by Lights)</h5>
-            <p>
-              Now that the lighting environment is set, let's dive into how we
-              sculpt the overall shape using 3D primitives like spheres or cubes
-              as below. The same technique is used for the placement of the box
-              around the middle (with <b>polar coordinates</b> again)
-            </p>
-          </div>
-
-          <div class="flex gap-0 mb-3 mt-8">
-            <img
-              class="w-1/2 p-1"
-              src="../../images/projects/Lights/rendu-lights0.gif"
-              alt="Rotational light on immmobile objects"
-              title="Rotational light on immmobile objects"
-            />
-            <img
-              class="w-1/2 p-1"
-              src="../../images/projects/Lights/rendu-lights.gif"
-              alt="Rotational light on self rotate objects"
-              title="Rotational light on self rotate objects"
-            />
-          </div>
-          <div class="flex justify-stretch items-start">
-            <ul class="font-code text-xs w-full">
-              <b>Parameters:</b>
-              <li>shininess(1)</li>
-              <li>ambientLight(150)</li>
-              <li>ambientMaterial(100)</li>
-              <li>specularColor(150)</li>
-              <li>specularMaterial(150)</li>
-            </ul>
-
-            <LinkCodeSource
-              link="https://editor.p5js.org/codingJM/sketches/xcTjPGm1p"
-            />
-          </div>
-          <details class="mt-8">
-            <summary> Notes abouts parameters </summary>
-            <ul
-              class="border border-white p-10 m-2 text-sm text-wrap max-w-prose"
-            >
-              <p>
-                Faced with the vast possibilities of visual variations in 3D
-                lighting and color, I decided to <strong
-                  >create specific parameter schemes for my 3D renders</strong
-                >. This approach allows me to work with a curated set of
-                parameters, giving each render a distinct style. I now have
-                presets for matte, glossy, metallic, soft, and glass
-                finishes—along with a custom option for my personal settings.
-                This framework keeps the creative process organized while still
-                offering flexibility and control over each piece.
-              </p>
-              <code class="font-code text-xs p-2 mt-3">
-                <p>
-                  const renderLights = &#123;<br />Mat : &#123;shininess:1,
-                  ambientLight:10, ambientMaterial:120, specularColor:50,
-                  specularMaterial:30,metalness: 50&#125;,<br />Glossy :
-                  &#123;shininess:50, ambientLight:80, ambientMaterial:100,
-                  specularColor:200, specularMaterial:180,metalness: 50&#125;,<br
-                  />Metallic : &#123;shininess:300, ambientLight:60,
-                  ambientMaterial:70,
-                  specularColor:255,specularMaterial:250,metalness: 80&#125;,<br
-                  />Soft : &#123;shininess:10, ambientLight:150,
-                  ambientMaterial:140, specularColor:80,
-                  specularMaterial:20,metalness: 30&#125;,<br />Glossy :
-                  &#123;shininess:120, ambientLight:50, ambientMaterial:50,
-                  specularColor:255, specularMaterial:230,metalness: 70&#125;,<br
-                  />Pizzapunk : &#123;shininess:5, ambientLight:0,
-                  ambientMaterial:10, specularColor:255,
-                  specularMaterial:200,metalness: 100&#125 <br />&#125;;
-                </p>
-              </code>
-            </ul>
-          </details>
-          <em class="text-2xl"
-            >This arrangement forms the choreographic foundation for sculpting a
-            harmonious shape.</em
+        <h6>Here's the basic code</h6>
+        <a
+          href="https://editor.p5js.org/codingJM/sketches/4mUOWU1tb"
+          target="_blank"
+          title="Open basic code of polar coordinates in p5.js editor"
+          ><img
+            alt="code p5.js editor"
+            src="../../images/projects/Lights/basic-polar-coord.webp"
+          /></a
+        >
+        <LinkCodeSource
+          link="https://editor.p5js.org/codingJM/sketches/4mUOWU1tb"
+        />
+        <div class="md:flex md:items-center flex-row-reverse mt-8">
+          <p>
+            Instead of placing ellipses along the diameter of an imaginary
+            circle, let’s arrange directional lights around a 3D sphere.
+          </p>
+          <a
+            target="_blank"
+            title="Open basic code of light system in p5.js editor"
+            href="https://editor.p5js.org/codingJM/sketches/aRBYfpt6P"
+            ><img
+              alt="code p5.js editor"
+              class=""
+              src="../../images/projects/Lights/capture-ligths-code.webp"
+              alt="Open basic code of light system in p5.js editor"
+            /></a
           >
         </div>
+        <LinkCodeSource
+          link="https://editor.p5js.org/codingJM/sketches/aRBYfpt6P"
+        />
+
+        <!-- images ok -->
+        <div class="flex my-8 font-code text-xs text-center gap-1 mt-8">
+          <div class="md:w-1/3">
+            <img
+              src="../../images/projects/Lights/rotationx.webp"
+              alt="Rotate lights around the X axis"
+            />
+            <caption class="line-clamp-2"
+              >Rotate lights around the X axis</caption
+            >
+          </div>
+          <div class="md:w-1/3">
+            <img
+              src="../../images/projects/Lights/rotationy.webp"
+              alt="Rotate lights around the Y axis"
+            />
+            <caption class="line-clamp-2"
+              >Rotate lights around the Y axis</caption
+            >
+          </div>
+          <div class="md:w-1/3">
+            <img
+              class=""
+              src="../../images/projects/Lights/rotationz.webp"
+              alt="Rotate lights around the Z axis"
+            />
+            <caption class="line-clamp-2"
+              >Rotate lights around the Z axis</caption
+            >
+          </div>
+        </div>
+
+        <details id="codeFramecount">
+          <summary>Notes about code</summary>
+          <div class="border border-white p-10 m-2 text-sm max-w-prose">
+            <h6 class="m-0 p-0">
+              About native variable <code>frameCount</code>
+            </h6>
+            <p>
+              In the previous code, you might have noticed that I'm not using
+              the native <code>frameCount()</code> function from p5.js. Instead,
+              I start by creating my own variable <code>f = 0</code> and then I increment
+              <code>f</code> by 1 on each frame.
+            </p>
+            <p>There are two main reasons why I do this:</p>
+            <ol>
+              <li>
+                <code>f</code> is shorter to type than frameCount, which can be convenient,
+                especially in longer projects.
+              </li>
+              <li>
+                I can reset <code>f</code> to 0 whenever I want. With the native
+                <code>frameCount()</code>, it's a built-in function that always
+                increases from 0 and you can't reset it. But sometimes, I want
+                the counter to restart, and using my own <code>f</code>
+                variable gives me that flexibility.
+              </li>
+            </ol>
+          </div>
+          <div class="border border-white p-10 m-2 text-sm max-w-prose">
+            <h6 class="mt-0 pt-0">
+              About <code>t = (f / nbFrames) % 1</code>
+            </h6>
+            <p>
+              the variable <code>t</code> is used to control how many complete rotations
+              the lights make over a specific period of time, which is determined
+              by the number of keyframes (<code>nbFrames</code>).
+            </p>
+            <ul class="list-disc list-inside">
+              <li>
+                This formula ensures that <code>t</code> is always a value between
+                0 and 1. It essentially measures how far along the animation is,
+                relative to the total number of frames.
+              </li>
+              <li>
+                As <code>f</code> (my custom frame counter) increases with each frame,
+                <code>t</code> smoothly moves from 0 to 1, then resets back to 0
+                when <code>f</code> completes a full cycle. This gives a looping
+                effect.
+              </li>
+              <li>
+                This setup ensures that one full rotation of the lights occurs
+                over a span of <code>nbFrames</code> frames. So, if
+                <code>nbFrames = 90</code>, it means the lights will complete a
+                full rotation every 90 frames, creating a smooth looping
+                animation
+              </li>
+            </ul>
+          </div>
+        </details>
+
+        <p class="pt-12">
+          Unlike a directional light system, as used in the example above, final
+          pieces utilizes a <b>pointLight system</b>.
+        </p>
+        <p class="text-sm mt-3 leading-7">
+          It's enhances the contrast in terms of brightness and adds a more <strong
+            >dramatic effect</strong
+          > to the visual output. The pointLight setup allows for more localized
+          lighting, creating highlights and shadows that change dynamically as the
+          object rotates. This results in a richer and more intense rendering, emphasizing
+          the depth and complexity of the shapes.
+        </p>
+        <h5>3D Objects Rendering (Colors Shaped by Lights)</h5>
+        <p>
+          Now that the lighting environment is set, let's dive into how we
+          sculpt the overall shape using 3D primitives like spheres or cubes as
+          below. The same technique is used for the placement of the box around
+          the middle (with <b>polar coordinates</b> again)
+        </p>
+
+        <div class="flex gap-0 mb-3 mt-8">
+          <img
+            class="w-1/2 p-1"
+            src="../../images/projects/Lights/rendu-lights0.gif"
+            alt="Rotational light on immmobile objects"
+            title="Rotational light on immmobile objects"
+          />
+          <img
+            class="w-1/2 p-1"
+            src="../../images/projects/Lights/rendu-lights.gif"
+            alt="Rotational light on self rotate objects"
+            title="Rotational light on self rotate objects"
+          />
+        </div>
+        <div class="flex justify-stretch items-start" id="noteParams">
+          <ul class="font-code text-xs w-full">
+            <b>Parameters:</b>
+            <li>shininess(1)</li>
+            <li>ambientLight(150)</li>
+            <li>ambientMaterial(100)</li>
+            <li>specularColor(150)</li>
+            <li>specularMaterial(150)</li>
+          </ul>
+
+          <LinkCodeSource
+            link="https://editor.p5js.org/codingJM/sketches/xcTjPGm1p"
+          />
+        </div>
+        <details class="mt-8">
+          <summary> Notes abouts parameters </summary>
+          <ul
+            class="border border-white p-10 m-2 text-sm text-wrap max-w-prose"
+          >
+            <p>
+              Faced with the vast possibilities of visual variations in 3D
+              lighting and color, I decided to <strong
+                >create specific parameter schemes for my 3D renders</strong
+              >. This approach allows me to work with a curated set of
+              parameters, giving each render a distinct style. I now have
+              presets for matte, glossy, metallic, soft, and glass
+              finishes—along with a custom option for my personal settings. This
+              framework keeps the creative process organized while still
+              offering flexibility and control over each piece.
+            </p>
+            <code class="mt-3">
+              <p>
+                const renderLights = &#123;<br />Mat : &#123;shininess:1,
+                ambientLight:10, ambientMaterial:120, specularColor:50,
+                specularMaterial:30,metalness: 50&#125;,<br />Glossy :
+                &#123;shininess:50, ambientLight:80, ambientMaterial:100,
+                specularColor:200, specularMaterial:180,metalness: 50&#125;,<br
+                />Metallic : &#123;shininess:300, ambientLight:60,
+                ambientMaterial:70,
+                specularColor:255,specularMaterial:250,metalness: 80&#125;,<br
+                />Soft : &#123;shininess:10, ambientLight:150,
+                ambientMaterial:140, specularColor:80,
+                specularMaterial:20,metalness: 30&#125;,<br />Glass :
+                &#123;shininess:120, ambientLight:50, ambientMaterial:50,
+                specularColor:255, specularMaterial:230,metalness: 70&#125;,<br
+                />Pizzapunk : &#123;shininess:5, ambientLight:0,
+                ambientMaterial:10, specularColor:255,
+                specularMaterial:200,metalness: 100&#125 <br />&#125;;
+              </p>
+            </code>
+          </ul>
+        </details>
+        <em class="text-2xl"
+          >This arrangement forms the choreographic foundation for sculpting a
+          harmonious shape.</em
+        >
       </div>
 
       <hr />
 
       <div id="dance">
-        <h3 class="text-4xl font-syne font-bold">Let's dance!</h3>
+        <h4>Let's dance!</h4>
         <p>
           In this creation, I imagine each 3D primitive as a dancer. With
           oscillations, we can personnalize objects and choreograph different
@@ -486,14 +441,16 @@ const titleSpan = "& explorations";
         <ol>
           <li class="mb-3 mt-8">
             Each object is assigned a <b>color</b> from the palette.
-            <details>
+            <details open>
               <summary>Code</summary>
               <p>
-                <code class="p-3">
-                  
+                <code>
                   c = int(cpt) % palette.length;<br />
                   fill(palette[c]);<br /><br />
-                  /*The modulo operator % is used here to ensure that c (the index for accessing colors in the palette array of- 5 max lights) stays within the bounds of the array length (6th color doesn't exist), no matter how large cpt (the number of balls) gets*/
+                  /*The modulo operator % is used here to ensure that c (the index
+                  for accessing colors in the palette array of- 5 max lights) stays
+                  within the bounds of the array length (6th color doesn't exist),
+                  no matter how large cpt (the number of balls) gets*/
                 </code>
               </p>
             </details>
@@ -506,10 +463,10 @@ const titleSpan = "& explorations";
               src="../../images/projects/Lights/chore0.gif"
               alt="Put on your red shoes and dance the blues"
             />
-            <details>
+            <details open>
               <summary>Code</summary>
               <p>
-                <code class="p-3">
+                <code>
                   x = sin(i + t*TAU) * 100;<br />
                   y = cos(i + t*TAU) * 100;<br />
                   z = sin(i + t*TAU) * 100;<br />
@@ -517,7 +474,7 @@ const titleSpan = "& explorations";
               </p>
             </details>
           </li>
-          <li class="mb-3 mt-8">
+          <li class="mb-3 mt-8" id="lissajous">
             By multiplying this time by an integer, we introduce <b
               >variations</b
             >
@@ -525,7 +482,6 @@ const titleSpan = "& explorations";
               href="https://en.wikipedia.org/wiki/Lissajous_curve"
               >Lissajous Curves</a
             >).
-            
 
             <Gallerie
               columns={"grid-cols-3"}
@@ -545,10 +501,10 @@ const titleSpan = "& explorations";
               ]}
             />
 
-            <details>
+            <details open>
               <summary>Code</summary>
               <p>
-                <code class="p-3">
+                <code>
                   //in setUp()<br />
                   nbx = int(random(1,6)); nby = int(random(1,6)); nbz = int(random(1,6))<br
                   />
@@ -556,7 +512,8 @@ const titleSpan = "& explorations";
                   x = sin(i * nbx + t*TAU) * 100;<br />
                   y = cos(i * nby + t*TAU) * 100;<br />
                   z = sin(i * nbz + t*TAU) * 100;<br />
-                  // t*TAU is for recording the loop, we can use f*0.01 for a non recorded-looping version
+                  // t*TAU is for recording the loop, we can use f*0.01 for a non
+                  recorded-looping version
                 </code>
               </p>
             </details>
@@ -565,36 +522,35 @@ const titleSpan = "& explorations";
           <li class="mt-8">
             By changing the 3D primitive and adding <b>internal rotation</b> to each
             dancer (like whirling dervishes), we further enhance the choreography.
-            
+
             <Gallerie
-            columns={"grid-cols-3"}
-            images={[
-              {
-                src: "../../images/projects/Lights/chore04.gif",
-                alt: "Dance this Lissajous curves - #4",
-              },
-              {
-                src: "../../images/projects/Lights/chore05.gif",
-                alt: "Dance this Lissajous curves - #5",
-              },
-              {
-                src: "../../images/projects/Lights/chore06.gif",
-                alt: "Dance this Lissajous curves - #6",
-              },
-            ]}
-          />
-          <details>
-            <summary>Code</summary>
-            <p>
-              <code class="p-3">
-                rotateZ(atan2(x, y, z) + t * TAU);<br />
-                ellipsoid(50, 10, 10);<br />
-              </code>
-            </p>
-          </details>
+              columns={"grid-cols-3"}
+              images={[
+                {
+                  src: "../../images/projects/Lights/chore04.gif",
+                  alt: "Dance this Lissajous curves - #4",
+                },
+                {
+                  src: "../../images/projects/Lights/chore05.gif",
+                  alt: "Dance this Lissajous curves - #5",
+                },
+                {
+                  src: "../../images/projects/Lights/chore06.gif",
+                  alt: "Dance this Lissajous curves - #6",
+                },
+              ]}
+            />
+            <details open>
+              <summary>Code</summary>
+              <p>
+                <code>
+                  rotateZ(atan2(x, y, z) + t * TAU);<br />
+                  ellipsoid(50, 10, 10);<br />
+                </code>
+              </p>
+            </details>
           </li>
         </ol>
-       
 
         <LinkCodeSource
           link="https://editor.p5js.org/codingJM/sketches/epTX2lO_w"
@@ -604,8 +560,8 @@ const titleSpan = "& explorations";
       <hr />
 
       <div id="webgl">
-        <h3 class="text-4xl font-syne font-bold">Preserving Every Move</h3>
-        <h4 class="text-base tracking-normal">Drawing with WebGL and p5.js</h4>
+        <h4>Preserving Every Move</h4>
+        <h5>Drawing with WebGL and p5.js</h5>
         <p>
           In this project, I explore the idea of drawing without erasing,
           leveraging p5.js and WebGL to create visuals that continuously build
@@ -625,19 +581,19 @@ const titleSpan = "& explorations";
           columns={"pt-3 grid-cols-2 lg:grid-cols-4"}
           images={[
             {
-              src: "../../images/projects/Lights/noise2.png",
+              src: "../../images/projects/Lights/noise2.webp",
               alt: "Adding Noise #1",
             },
             {
-              src: "../../images/projects/Lights/noise3.png",
+              src: "../../images/projects/Lights/noise3.webp",
               alt: "Adding Noise #2",
             },
             {
-              src: "../../images/projects/Lights/noise4.png",
+              src: "../../images/projects/Lights/noise4.webp",
               alt: "Adding Noise #3",
             },
             {
-              src: "../../images/projects/Lights/noise5.png",
+              src: "../../images/projects/Lights/noise5.webp",
               alt: "Adding Noise #4",
             },
           ]}
@@ -658,8 +614,8 @@ const titleSpan = "& explorations";
       <hr />
 
       <div id="harmony">
-        <h3 class="text-4xl font-syne font-bold">Looking for harmony</h3>
-        <h4>Let's make it more organic</h4>
+        <h4>Looking for harmony</h4>
+        <h5>Let's make it more organic</h5>
         <p>Shifting the composition and adding an organic rythm:</p>
         <p>
           Keeping in mind that <strong
@@ -681,7 +637,7 @@ const titleSpan = "& explorations";
         <details>
           <summary>Code</summary>
 
-          <code class="p-3 my-3">
+          <code class="my-3">
             // More times<br />
             // A cycle of 900 keyframes<br />
             let nbFrames = 900;<br />
@@ -736,15 +692,15 @@ const titleSpan = "& explorations";
           columns={"grid-cols-2 md:grid-cols-3"}
           images={[
             {
-              src: "../../images/projects/Lights/harmony01.png",
+              src: "../../images/projects/Lights/harmony01.webp",
               alt: "Adding Noise #1",
             },
             {
-              src: "../../images/projects/Lights/harmony02.png",
+              src: "../../images/projects/Lights/harmony02.webp",
               alt: "Adding Noise #2",
             },
             {
-              src: "../../images/projects/Lights/harmony03.png",
+              src: "../../images/projects/Lights/harmony03.webp",
               alt: "Adding Noise #3",
             },
           ]}
@@ -755,120 +711,606 @@ const titleSpan = "& explorations";
             >Now we’re talking, this is looking pretty good!</em
           >
         </p>
+      </div>
 
-        <hr />
-        <div id="realTime">
-          <h3 class="text-4xl font-syne font-bold">RealTime Generative</h3>
-          <div class="lg:flex lg:gap-8 lg:items-start">
-            <video width="320" height="240" class="w-full mb-3" controls>
-              <source
-                src="../../videos/20241026-175051.webm"
-                type="video/webm"
-              />
-              Your browser does not support the video tag.
-            </video>
-            <p>
-              <strong>The construction of the form in real time</strong>, guided
-              by oscillations and subtly distorted by Perlin noise, unfolds in
-              real time, creating <strong
-                >a profound sense of satisfaction</strong
-              > as the process comes to life before my eyes. It’s likely this <strong
-                >mesmerizing quality—the feeling of watching something evolve
-                organically—that drew me back to this work</strong
-              >.
-            </p>
-          </div>
-        </div>
-
-        <hr />
-
-        <div id="refinements">
-          <h3 class="text-4xl font-syne font-bold">Refinements</h3>
-          <h4>Things added</h4>
-
-          <ol>
-            <li>
-              Use of a <b>monochrome</b> palette + <b>one random color</b>
-            </li>
-            <li>A little <b>orbiting satellite</b></li>
-            <li>Random rotation of light System (X or Y or Z)</li>
-            <li>Addition of a <b>non-linear progression</b> in the lateral movement</li>
-            <li>Horizontal, vertical or random angle for the translations</li>
-            <li>Internal rotation based on self position but with different axies</li>
-            <li>A different number of rotation of the global scene</li>
-            <li><b>Rotation of the global scene (what drove me crazy)</b></li>
-            <li>Adding <b>steps noise</b> to the <b>length of the ellipses</b></li>
-            <li>...</li>
-          </ol>
-          <p class="py-4">
-            I can’t detail every process—there was a tremendous amount of trial
-            and error, countless iterations that worked to varying degrees, and
-            many steps that led me back to square one. Attempting to explain it
-            all would be daunting. <strong
-              >My obsession with creating these generative forms pushed me into
-              moments verging on a certain madness</strong
-            >, as the pursuit of these intricate shapes took on a life of its
-            own.
+      <hr />
+      <div id="realTime">
+        <h4>RealTime Generative</h4>
+        <div class="lg:flex lg:gap-8 lg:items-start">
+          <video width="320" height="240" class="w-full mb-3" controls>
+            <source src="../../videos/20241026-175051.webm" type="video/webm" />
+            Your browser does not support the video tag.
+          </video>
+          <p>
+            <strong>The construction of the form in real time</strong>, guided
+            by oscillations and subtly distorted by Perlin noise, unfolds in
+            real time, creating <strong>a profound sense of satisfaction</strong
+            > as the process comes to life before my eyes. It’s likely this <strong
+              >mesmerizing quality—the feeling of watching something evolve
+              organically—that drew me back to this work</strong
+            >.
           </p>
-          <p class="my-8">
-            After countless tweaks, long nights of adjustments and testing, I
-            managed to find the optimal settings.
-          </p>
-          <h4>And after endless several <s>weeks</s> months...</h4>
-
-          <!-- <p>V3</p> -->
-          <Gallerie
-            columns={"grid-cols-2 md:grid-cols-3 lg:grid-cols-5"}
-            images={[
-              {
-                src: "../../images/projects/Lights/V3-1/final01.png",
-                alt: "final01.png",
-              },
-              {
-                src: "../../images/projects/Lights/V3-1/final02.png",
-                alt: "final02.png",
-              },
-              {
-                src: "../../images/projects/Lights/V3-1/final03.png",
-                alt: "final03.png",
-              },
-              {
-                src: "../../images/projects/Lights/V3-1/final04.png",
-                alt: "final04.png",
-              },
-              {
-                src: "../../images/projects/Lights/V3-1/final05.png",
-                alt: "final05.png",
-              },
-              {
-                src: "../../images/projects/Lights/V3-1/final06.png",
-                alt: "final06.png",
-              },
-              {
-                src: "../../images/projects/Lights/V3-1/final07.png",
-                alt: "final07.png",
-              },
-              {
-                src: "../../images/projects/Lights/V3-1/final08.png",
-                alt: "final08.png",
-              },
-              {
-                src: "../../images/projects/Lights/V3-1/final09.png",
-                alt: "final09.png",
-              },
-              {
-                src: "../../images/projects/Lights/V3-1/final10.png",
-                alt: "final10.png",
-              },
-            ]}
-          />
         </div>
       </div>
 
       <hr />
 
+      <div id="refinements">
+        <h4>Refinements</h4>
+        <h5>Things added</h5>
+
+        <ol>
+          <li>
+            Use of a <b>monochrome</b> palette + <b>one random color</b>
+          </li>
+          <li>A little <b>orbiting satellite</b></li>
+          <li>Random rotation of light System (X or Y or Z)</li>
+          <li>
+            Addition of a <b>non-linear progression</b> in the lateral movement
+          </li>
+          <li>Horizontal, vertical or random angle for the translations</li>
+          <li>
+            Internal rotation based on self position but with different axies
+          </li>
+          <li>A different number of rotation of the global scene</li>
+          <li><b>Rotation of the global scene (what drove me crazy)</b></li>
+          <li>
+            Adding <b>steps noise</b> to the <b>length of the ellipses</b>
+          </li>
+          <li>...</li>
+        </ol>
+        <p class="py-4">
+          I can’t detail every process—there was a tremendous amount of trial
+          and error, countless iterations that worked to varying degrees, and
+          many steps that led me back to square one. Attempting to explain it
+          all would be daunting. <strong
+            >My obsession with creating these generative forms pushed me into
+            moments verging on a certain madness</strong
+          >, as the pursuit of these intricate shapes took on a life of its own.
+        </p>
+        <p class="my-8">
+          After countless tweaks, long nights of adjustments and testing, I
+          managed to find the optimal settings.
+        </p>
+
+        <!-- <p>V3</p> -->
+
+      </div>
+
+      <hr />
+
+      <div id="testing">
+        <h4>Exploring Parameter Variations</h4>
+        <p>
+          With so many parameter options at my fingertips, it became essential
+          to make decisions that would <strong>narrow the variations to results I truly
+            enjoy.</strong><br> Testing each possibility was fascinating, but it was also easy
+          to get lost in endless combinations. By refining the choices, I could
+          focus on a set of outcomes that align with my vision, bringing
+          consistency and intentionality to the final work while still allowing
+          room for discovery within those parameters.
+        </p>
+        <h5>Average parameters</h5>
+        <p>
+          <strong>For testing purposes, I start with mid-range quantitative parameters
+            based on the final version’s settings.</strong> <br>By selecting the average
+          between minimum and maximum values, I create a balanced foundation for
+          further adjustments. For instance, if the minimum radius is set to 300
+          and the maximum to 700, I’ll set the test radius to 500. This approach
+          helps me gauge the effect of each parameter in a stable environment,
+          making it easier to fine-tune variations without straying too far from
+          my intended vision.
+        </p>
+        <code class="my-8">
+         <pre>Seed : 596862 ; 
+
+************
+RENDERING
+Format : 1600,1600 ; // Canvas format in width and height
+Palette : 
+#BBB,#888,#EEE,rgba(79,222,55,1),#444 ;  // Color palette used in the artwork
+Type Rendu : Mat ; // Render type chosen for lighting and material properties
+Position Z Lights : 800 ; // Distance of the pointlights
+Rotation Lights Axe  : X ; // Axis along which the lights are rotated (X, Y, or Z)
+************
+SCENE
+nb = 7 ; // Number of objects in the main structure
+nbTours = 1 ; // Number of full rotations for the entire scene
+Dir : 1 ; // Direction for the rotation (1 for clockwise, -1 for counterclockwise)
+lineaire = 0 ; // Linear or nonlinear mode for angle calculations
+Pw : 1 ; // Power factor applied to smooth or sharpen the oscillations
+Start : 3.6285249669951467 ; Fin : 0.4869323134053536 ; 
+// Starting and ending angle of rotation in radians
+Radius : 533.3333333333334 ; // Radius of the main layout structure
+rX = 0.25 ; rY = 0.35 ; rZ = 0.5 ; // Rotation component along the axis
+************
+3D PRIMITIVES
+nbX = 1 ; nbY = 1nbZ = 1 ; // Number of divisions or oscillations along the axis
+radiusOsc = 0.25 ; // Radius used for oscillation in the layout
+vNoiz : 0.25 ; // Noise intensity applied to the movement
+modulCycle : 0.005 ; // Cycle modulation affecting the periodicity of the oscillations
+Rotation Atan  : none ; // Mode for rotation based on the atan function
+Length Steps  : 0 ; // Length variation steps for individual elements
+wObj : 0.0225 ; // Weight of objects in the structure (affects size)
+</pre>
+        </code>
+        <h6>Arbitrary seed: 596862</h6>
+        <img
+          class="thumbnail lg:w-1/2"
+          src="/images/projects/Lights/testing01-seed.webp"
+          data-src="/images/projects/Lights/testing01-seed.webp"
+          alt="Arbitrary seed for test"
+        />
+        <h5 class="border-l-4 border-accent pl-2">RENDERING</h5>
+        <h6>Color</h6>
+        <code>color(random(360), random(50,100), random(75,100))</code>
+        <Gallerie
+          columns={"grid-cols-2 md:grid-cols-6"}
+          images={[
+            {
+              src: "../../images/projects/Lights/testing-color-50-50.webp",
+              alt: "Saturation:50, brightness:50",
+            },
+            {
+              src: "../../images/projects/Lights/testing-color-50-75.webp",
+              alt: "Saturation:50, brightness:75",
+            },
+            {
+              src: "../../images/projects/Lights/testing-color-50-100.webp",
+              alt: "Saturation:50, brightness:100",
+            },
+            {
+              src: "../../images/projects/Lights/testing-color-100-50.webp",
+              alt: "Saturation:100, brightness:50s",
+            },
+          ]}
+        />
+        
+        <h6>Render Type</h6>
+        <p>See <a href="#noteParams">about render type parameters</a></p>
+        <code><pre>random(["Mat","Glossy","Soft","PizzaPunk"])</pre></code>
+        <Gallerie
+          columns={"grid-cols-2 md:grid-cols-6"}
+          images={[
+            {
+              src: "../../images/projects/Lights/testing01-seed.webp",
+              alt: "Mat",
+            },
+            {
+              src: "../../images/projects/Lights/testing-render-glossy.webp",
+              alt: "Glossy",
+            },
+            {
+              src: "../../images/projects/Lights/testing-render-soft.webp",
+              alt: "Soft",
+            },
+            {
+              src: "../../images/projects/Lights/testing-render-glass.webp",
+              alt: "Glass",
+            },
+            {
+              src: "../../images/projects/Lights/testing-render-metallic.webp",
+              alt: "Metal",
+            },
+            {
+              src: "../../images/projects/Lights/testing-render-pizzapunk.webp",
+              alt: "PizzaPunk",
+            },
+          ]}
+        />
+
+        <h6>Distance of the pointlights</h6>
+        <code><pre>posLight: random(-width,width)
+let lightPosx = cos(angle - t * TAU) * posLight;
+let lightPosy = sin(angle - t * TAU) * posLight;</pre></code>
+<Gallerie
+          columns={"grid-cols-2 md:grid-cols-6"}
+          images={[
+            {
+              src: "../../images/projects/Lights/testing-posLight--width.webp",
+              alt: "-width",
+            },
+            {
+              src: "../../images/projects/Lights/testing-posLight-0.webp",
+              alt: "0",
+            },
+            {
+              src: "../../images/projects/Lights/testing-posLight-width.webp",
+              alt: "width",
+            },
+            
+          ]}
+        />
+        
+        <h6>Axe of Rotation Lights</h6>
+        <code><pre>case "X": secdCvs.pointLight(color(palette[i]), 0, lightPosx, lightPosy); break;
+case "Y": secdCvs.pointLight(color(palette[i]), lightPosx, 0, lightPosy); break;
+case "Z": secdCvs.pointLight(color(palette[i]), lightPosx, lightPosy, 0); break;</pre></code>
+        <p>See <a href="imgLighting">Lighting system Diagrams</a></p>
+        <Gallerie
+          columns={"grid-cols-2 md:grid-cols-6"}
+          images={[
+            {
+              src: "../../images/projects/Lights/testing01-seed.webp",
+              alt: "X axis",
+            },
+            {
+              src: "../../images/projects/Lights/testing-Y-axis.webp",
+              alt: "Y axis",
+            },
+            {
+              src: "../../images/projects/Lights/testing-Z-axis.webp",
+              alt: "Z axis",
+            },
+
+          ]}
+        />
+        
+        
+        <h5 class="border-l-4 border-accent pl-2">SCENE</h5>
+        <h6>Number of objects </h6>
+        <code><pre>nb: int(random(3,12)),</pre></code>
+        <Gallerie
+          columns={"grid-cols-2 md:grid-cols-6"}
+          images={[
+            {
+              src: "../../images/projects/Lights/testing-nb-2.webp",
+              alt: "2 objects",
+            },
+            {
+              src: "../../images/projects/Lights/testing01-seed.webp",
+              alt: "7 objects",
+            },
+            {
+              src: "../../images/projects/Lights/testing-nb-12.webp",
+              alt: "12 objects",
+            },
+            {
+              src: "../../images/projects/Lights/testing-nb-20.webp",
+              alt: "20 objects",
+            },
+
+          ]}
+        />
+        <h6>Number of full rotations + Rotation component along the axis </h6>
+        
+        <code><pre>nbTours: int(random(1,4));
+rX: random(.5), rY: random(.5), rZ: random(1)
+rotate(nt * TAU * nbTours * dir, [rX, rY , rZ])</pre></code>  
+          <Gallerie
+          columns={"grid-cols-2 md:grid-cols-6"}
+          images={[
+            {
+              src: "../../images/projects/Lights/testing01-seed.webp",
+              alt: "1 rotation",
+            },
+            {
+              src: "../../images/projects/Lights/testing-tours-3.webp",
+              alt: "3 rotations",
+            },
+            {
+              src: "../../images/projects/Lights/testing-tours-6.webp",
+              alt: "6 rotations",
+            },
+
+          ]}
+        />
+        <Gallerie
+          columns={"grid-cols-2 md:grid-cols-6"}
+          images={[
+            {
+              src: "../../images/projects/Lights/testing-rotation-.5-0-0.webp",
+              alt: "180° around X",
+            },
+            {
+              src: "../../images/projects/Lights/testing-rotation-0-.5-0.webp",
+              alt: "180° around Y",
+            },
+            {
+              src: "../../images/projects/Lights/testing-rotation-0-0-1.webp",
+              alt: "360° around Z",
+            },
+
+          ]}
+        />
+
+        
+        <h6>Radius of the main layout structure</h6>
+        <code><pre>rad: random([0, width / 2, width / 3, width / 4 ]);
+ptStart = createVector(sin(angleStart) * rad, cos(angleStart) * rad);
+ptEnd = createVector(sin(angleEnd) * rad, cos(angleEnd) * rad);
+translate(map(nt, 0, 1, ptStart.x, ptEnd.x),map(nt, 0, 1, ptStart.y, ptEnd.y),0);</pre></code>
+        <Gallerie
+          columns={"grid-cols-2 md:grid-cols-6"}
+          images={[
+            {
+              src: "../../images/projects/Lights/testing-rad-0.webp",
+              alt: "Radius 0",
+            },
+            {
+              src: "../../images/projects/Lights/testing-rad-25.webp",
+              alt: "Radius 50%",
+            },
+            {
+              src: "../../images/projects/Lights/testing01-seed.webp",
+              alt: "Radius 66%%",
+            },
+            {
+              src: "../../images/projects/Lights/testing-rad-50.webp",
+              alt: "Radius 100%",
+            },
+            {
+              src: "../../images/projects/Lights/testing-rad-100.webp",
+              alt: "Radius 200%",
+            },
+
+          ]}
+        />
+        <h6>Power factor</h6>
+        <code><pre>pw: random(0.55,1.5);
+nt = pow(t, pw);</pre></code>
+        <p>See <a href="#codeFramecount">note about t (frameCount in a cycle)</a></p>
+        <Gallerie
+          columns={"grid-cols-2 md:grid-cols-6"}
+          images={[
+            {
+              src: "../../images/projects/Lights/testing-powerFactor-0.2.webp",
+              alt: "Power 0.2",
+            },
+            
+            {
+              src: "../../images/projects/Lights/testing01-seed.webp",
+              alt: "Power 1 (linear)",
+            },
+            {
+              src: "../../images/projects/Lights/testing-powerFactor-3.webp",
+              alt: "Power 3",
+            },
+
+          ]}
+        />
+        
+        
+        <h5 class="border-l-4 border-accent pl-2">3D PRIMITIVES</h5>
+        <h6>Noise intensity applied to the movement + Radius used for oscillation + Number of oscillations along the axis</h6>
+        <code><pre>vNoiz: random(0.5);
+nbX: int(random(10)),nbY: int(random(10)),nbZ: int(random(10));
+for (let i = 0; i &#8804; TAU; i += TAU / nb) ...
+xoff = map(sin(i + nt * TAU), -1, 1, 0, vNoiz);
+yoff = map(cos(i + nt * TAU), -1, 1, 0, vNoiz);
+radiusOsc: random(0.1,0.5);
+wT = width * radiusOsc;
+n = width * 0.1 + noise(xoff, yoff) * (wT - t * wT);
+...</pre></code>
+<Gallerie
+          columns={"grid-cols-2 md:grid-cols-6"}
+          images={[
+            {
+              src: "../../images/projects/Lights/testing-noise-0.webp",
+              alt: "Noise 0",
+            },
+            
+            {
+              src: "../../images/projects/Lights/testing01-seed.webp",
+              alt: "Noise 0.25",
+            },
+            {
+              src: "../../images/projects/Lights/testing-noise-0.5.webp",
+              alt: "Noise 0.5",
+            },
+            {
+              src: "../../images/projects/Lights/testing-noise-0.75.webp",
+              alt: "Noise 0.75",
+            },
+
+          ]}
+        />
+        <Gallerie
+          columns={"grid-cols-2 md:grid-cols-6"}
+          images={[
+            {
+              src: "../../images/projects/Lights/testing-radOsc-0.1.webp",
+              alt: "Radius Osc 0.1",
+            },
+            
+            {
+              src: "../../images/projects/Lights/testing01-seed.webp",
+              alt: "Radius Osc 0.25",
+            },
+            {
+              src: "../../images/projects/Lights/testing-radOsc-0.5.webp",
+              alt: "Radius Osc 0.5",
+            },
+            {
+              src: "../../images/projects/Lights/testing-radOsc-1.webp",
+              alt: "Radius Osc 1",
+            },
+
+          ]}
+        />
+        
+        <Gallerie
+        columns={"grid-cols-2 md:grid-cols-6"}
+        images={[
+          {
+            src: "../../images/projects/Lights/testing-osc-1-1-3.webp",
+            alt: "Osc x:1 y:1 z:3",
+          },
+          
+          {
+            src: "../../images/projects/Lights/testing-osc-1-2-3.webp",
+            alt: "Osc x:1 y:2 z:3",
+          },
+          {
+            src: "../../images/projects/Lights/testing-osc-1-5-2.webp",
+            alt: "Osc x:1 y:5 z:2",
+          },
+          {
+            src: "../../images/projects/Lights/testing-osc-7-5-6.webp",
+            alt: "Osc x:7 y:5 z:6",
+          },
+        ]}
+      />
+      <p>For osc, see <a href="#lissajous">variations in dancing</a></p>
+        
+
+        <h6>Cycle modulation affecting the periodicity of the oscillations</h6>
+        <code><pre>modulCycle: random(0.01);
+v = noise(i * 100 + nt * TAU * 2)
+if (v % 0.07 &#8804; modulCycle) &#123; 
+  ellipsoid(...)
+&#125;</pre></code>
+        <Gallerie
+        columns={"grid-cols-2 md:grid-cols-6"}
+        images={[
+          {
+            src: "../../images/projects/Lights/testing01-seed.webp",
+            alt: "Cycle 0.005",
+          },
+          
+          {
+            src: "../../images/projects/Lights/testing-cycle-0.01.webp",
+            alt: "Cycle 0.01",
+          },
+          {
+            src: "../../images/projects/Lights/testing-cycle-0.03.webp",
+            alt: "Cycle 0.03",
+          },
+        ]}
+      />
+        <h6>Mode for rotation based on the atan function</h6>
+        <code><pre>modeRotateAtan: random(["none","x","y","z","xyz"]),
+switch (modeRotateAtan) &#123;
+case "x":
+  rotate(i + atan2(0, y, z))
+  break;
+case "y":
+  rotate(i + atan2(x, 0, z))
+  break;
+case "z":
+  rotate(i + atan2(x, y, 0))
+  break;
+  case "xyz":
+rotate(i + atan2(x, y, z))
+  break;
+  default: break;
+&#125;</pre></code>
+        <Gallerie
+        columns={"grid-cols-2 md:grid-cols-6"}
+        images={[
+          {
+            src: "../../images/projects/Lights/testing01-seed.webp",
+            alt: "None",
+          },
+          
+          {
+            src: "../../images/projects/Lights/testing-atan-x.webp",
+            alt: "Atan X",
+          },
+          {
+            src: "../../images/projects/Lights/testing-atan-y.webp",
+            alt: "Atan Y",
+          },
+          {
+            src: "../../images/projects/Lights/testing-atan-z.webp",
+            alt: "Atan Z",
+          },
+
+        ]}
+      />
+        <h6>Length variation steps for individual elements + Weight of objects in the structure (affects size)</h6>
+        <code><pre>lengthSteps: random([0,0,1]);
+nLenght = lengthSteps ? int(noise(i * 100 + nt * TAU) * 3) / 3 : noise(i * 100);
+length = nLenght * 0.2;
+nWeight = 0.01 + noise(i * 1000)
+weight = nWeight * wObj;
+v = noise(i * 100 + nt * TAU * 2)
+if (v % 0.07 &#62; modulCycle) &#123; //0.005 à 0.035
+    secdCvs.ellipsoid(
+        1 + minFormat * length - t * minFormat * length * 0.5,
+        1 + minFormat * weight - t * minFormat * weight,
+        1 + minFormat * weight / 2 - t * minFormat * weight / 2,
+    );
+  &#125;</pre></code>
+  <Gallerie
+        columns={"grid-cols-2 md:grid-cols-6"}
+        images={[
+          {
+            src: "../../images/projects/Lights/testing01-seed.webp",
+            alt: "Steps false",
+          },
+          
+          {
+            src: "../../images/projects/Lights/testing-steps-true.webp",
+            alt: "Steps true X",
+          },
+        ]}
+      />
+      <Gallerie
+        columns={"grid-cols-2 md:grid-cols-6"}
+        images={[
+          {
+            src: "../../images/projects/Lights/testing-weight-0.01.webp",
+            alt: "Weight 0.01",
+          },
+          {
+            src: "../../images/projects/Lights/testing-weight-0.02.webp",
+            alt: "Weight 0.02",
+          },
+          {
+            src: "../../images/projects/Lights/testing01-seed.webp",
+            alt: "Weight 0.0225",
+          },
+          
+          {
+            src: "../../images/projects/Lights/testing-weight-0.025.webp",
+            alt: "Weight 0.025",
+          },
+        ]}
+      />
+
+      </div>
+      
+      <hr>
+      <div id="final">
+        <h4>Mixing all together</h4>
+        <Gallerie
+          columns={"grid-cols-2 md:grid-cols-3"}
+          images={[
+            {
+              src: "../../images/projects/Lights/mixing-68046.webp",
+              alt: "Seed: 68046",
+            },
+            {
+              src: "../../images/projects/Lights/mixing-228692.webp",
+              alt: "Seed:228692",
+            },
+            {
+              src: "../../images/projects/Lights/mixing-379260.webp",
+              alt: "Seed:379260",
+            },
+            {
+              src: "../../images/projects/Lights/mixing-398430.webp",
+              alt: "Seed:398430",
+            },
+            {
+              src: "../../images/projects/Lights/mixing-409257.webp",
+              alt: "Seed:409257",
+            },
+            {
+              src: "../../images/projects/Lights/mixing-884597.webp",
+              alt: "Seed:884597",
+            },
+
+          ]}
+        />
+
+      </div>
+
+      <hr />
+
       <div id="conclusion">
-        <h3 class="text-4xl font-syne font-bold">Final Reflections</h3>
+        <h4>Final Reflections</h4>
         <p>
           By combining randomness, precise control over movement, and an
           evolving palette of colors and lights, I aim to create an experience
@@ -878,7 +1320,7 @@ const titleSpan = "& explorations";
           shapes and patterns come to life, revealing what words alone cannot
           convey.
         </p>
-        
+
         <p class="my-4">
           If you enjoy this project, you can acquire <a
             href="https://www.fxhash.xyz/u/Jerome%20(Pizza%20Punk)"
@@ -893,7 +1335,6 @@ const titleSpan = "& explorations";
           <i class="fa-regular fa-face-smile-beam animate-bounce"></i>
         </p>
 
-
         <p class="mt-24">
           <a class="hover:animate-pulse" href="/projects/">⇱ Back to Projects</a
           >
@@ -901,25 +1342,20 @@ const titleSpan = "& explorations";
       </div>
     </div>
   </div>
+  <script src="/scripts/hero.js" defer></script>
+  <script is:inline>
+    const imgHero = document.getElementById("imgHero");
+    const arrImages = ["mixing-68046","mixing-228692","mixing-379260","mixing-398430","mixing-409257","mixing-884597"]
+    
+    const imgRdm =
+      "../../images/projects/Lights/"+
+    arrImages[Math.floor(Math.random() * arrImages.length)] +
+      ".webp";
+    //console.log(imgRdm);
+    imgHero.setAttribute("src", imgRdm);
+  </script>
 
   <script is:inline>
-    // Animations Hero
-    let tl = gsap.timeline({
-      scrollTrigger: {
-        // markers:true,
-        trigger: "#nameProject",
-        pin: true,
-        start: "center-=50 center",
-        end: "center center",
-        scrub: 3,
-      },
-    });
-    tl.from("#ppunk", { rotation: 45, scale: 7, ease: "power.in" });
-    tl.from("#nameProject", { scale: 0.5 }, "<");
-    tl.from("#hero", { scale: 0.5, ease: "power.in" }, "<");
-
-    //Liens Gsap SrollTO pour le plan
-    // Define an array with target section IDs
     const sections = [
       "#creation",
       "#link2019",
@@ -928,6 +1364,8 @@ const titleSpan = "& explorations";
       "#harmony",
       "#realTime",
       "#refinements",
+      "#testing",
+      "#final",
       "#conclusion",
     ];
 
@@ -945,47 +1383,6 @@ const titleSpan = "& explorations";
         });
       })
     );
-
-    //Image aléatoire en hero
-    imgHero = document.getElementById("imgHero");
-    imgRdm =
-      "../../images/projects/Lights/V3-1/final0" +
-      Math.floor(Math.random() * 10) +
-      ".png";
-    console.log(imgRdm);
-    imgHero.setAttribute("src", imgRdm);
-
-    // document.getElementById("backToTop").addEventListener('click',(event)=>{
-    //   gsap.to(window, {duration:5, scrollTo: '#content'});
-    // })
   </script>
-
-  <style>
-    h4,
-    em {
-      letter-spacing: -0.05em;
-    }
-    h3,
-    h4,
-    h5,
-    h6 {
-      margin: 3rem 0;
-    }
-    h4 {
-      font-size: 2.25rem /* 36px */;
-      line-height: 2.5rem /* 40px */;
-    }
-    h5 {
-      font-size: 1.5rem /* 24px */;
-      line-height: 2rem /* 32px */;
-    }
-    h6 {
-    }
-    em {
-      display: block;
-      margin: 4rem 0;
-    }
-    p {
-    }
-  </style>
+  
 </Layout>

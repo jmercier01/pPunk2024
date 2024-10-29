@@ -1,0 +1,53 @@
+---
+interface Props {
+  title: string;
+  dateRelease: string;
+  format: string;
+  plateforme: string;
+  code: string;
+  link: string;
+  src: string;
+  rep: string;
+}
+const { title, dateRelease, format, plateforme, code, link, src, rep } =
+  Astro.props;
+---
+
+<div class="overflow-hidden">
+  <img
+    id="ppunk"
+    class="hidden md:absolute md:block object-contain mix-blend-overlay rounded-lg top-80 left-32 scale-110 -z-10 -rotate-6 -skew-y-3"
+    src="../../../images/logo.svg"
+    alt=""
+  />
+</div>
+
+<h3
+  id="nameProject"
+  class="font-syne font-extrabold text-4xl md:text-center text-accent pt-0 pb-12 px-3 md:px-0"
+>
+  {title}
+  <span class="block font-code text-sm">The process behind</span>
+</h3>
+
+<div id="hero" class="mb-6 relative">
+  <div
+    id="details"
+    class="absolute top-8 left-1 md:left-4 font-code font-light text-xs text-jour bg-nuit opacity-90 p-3"
+  >
+    <ul class="pl-4">
+      <li>Date of release: <b>{dateRelease}</b></li>
+      <li>Format: <b>{format}</b></li>
+      <li>Plateforme: <b>{plateforme}</b></li>
+      <li>Code: <b>{code}</b></li>
+      <li>Link: <b>{link}</b></li>
+    </ul>
+  </div>
+  <img
+    id="imgHero"
+    src={src}
+    alt={title}
+    title={title}
+    class="md:m-2 md:p-1 bg-jour md:rounded-3xl dark:bg-nuit"
+  />
+</div>

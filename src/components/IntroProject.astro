@@ -1,0 +1,14 @@
+---
+const {introTitle,introText} = Astro.props;
+---
+
+<div id="intro">
+    <p class="text-4xl my-9">
+      {introTitle}
+    </p>
+    <p
+      class="md:border-x md:border-zinc-300 md:dark:border-zinc-700 md:mx-auto"
+    >
+    {introText}
+    </p>
+  </div>

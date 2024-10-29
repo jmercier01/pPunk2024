@@ -20,8 +20,8 @@ const { images,columns }: Props = Astro.props;  // Utilisation des props dans le
   {images.map((image) => (
     <div class=" relative">
       <img 
-      src={image.src} data-src={image.src} alt={image.alt} 
-      class="thumbnail object-cover aspect-square rounded-md w-full h-auto"
+      src={image.src} data-src={image.src} data-lazy={image.src} alt={image.alt} 
+      class="lazy-image thumbnail object-cover aspect-square rounded-md w-full h-auto"
       />
       <p class="absolute bottom-0 right-0 text-xs font-code text-zinc-400 leading-none p-1">{image.alt}</p>
     </div>
