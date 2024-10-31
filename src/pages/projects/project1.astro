@@ -5,11 +5,14 @@ import LinkCodeSource from "../../components/LinkCodeSource.astro";
 import Gallerie from "../../components/Gallerie.astro";
 import HeroProject from "../../components/HeroProject.astro";
 import IntroProject from "../../components/IntroProject.astro";
+
+
 const title = "Anisotropic Sculpted Flow";
 const titleH1 = "A personal take on creativity";
 const titleH2 = "Projects";
 const titleSpan = "& explorations";
 const imagePath = "../../images/projects/Lights/mixing-";
+
 ---
 
 <Layout
@@ -23,9 +26,9 @@ description="Explore process of 'Anisotropic Sculpted Flow,' a generative art co
     
     <HeroProject
       title={title}
-      dateRelease="Demain"
+      dateRelease="Soon"
       format="Generative"
-      plateforme="Unknow"
+      plateforme="FxHash?"
       code="P5.js WEBGL"
       src="../../images/projects/Lights/mixing-68046.webp"
       link="Soon"
@@ -61,6 +64,8 @@ description="Explore process of 'Anisotropic Sculpted Flow,' a generative art co
 
       <hr />
 
+      
+
       <!-- History project -->
       <div id="creation">
         <h4>What Drives the Creation</h4>
@@ -75,23 +80,23 @@ description="Explore process of 'Anisotropic Sculpted Flow,' a generative art co
           <div>
             <p>
               <b
-                >This project has roots dating back to my explorations in 2019</b
-              >, using p5.js with the webGL canvas. By omitting the background()
+                >This project has roots dating back to my explorations in 2019, using p5.js with the webGL canvas</b
+              >. By omitting the background()
               function in the draw() loop, every stroke and movement on the
               screen was preserved, creating a kind of visual trail. Combining
               this technique with rotations, translations, and a dynamic
-              lighting system, I was able to produce some intriguing
-              images—though they were few and far between.
+              lighting system, I was able to <strong>produce some intriguing
+                images</strong>—though they were few and far between.
             </p>
             <p class="py-3">
               Around this time, <strong>I also began teaching</strong>, which
               led me to refocus on the core principles of generative design to
               make them accessible for students without coding backgrounds.
-              Today, I’m revisiting this project to refine the work—or rather,
-              it has found its way back to me. <b
-                >There’s an indescribable pull, a need to create in this space
+              <b>Today, I’m revisiting this project to refine the work—or rather,
+              it has found its way back to me. There’s an indescribable pull, a need to create in this space
                 once more.</b
               >
+              
             </p>
           </div>
         </div>
@@ -118,11 +123,25 @@ description="Explore process of 'Anisotropic Sculpted Flow,' a generative art co
           ]}
         />
 
-        <p class="my-5 text-xl py-8">
+        <!-- <p class="my-5 text-xl py-8">
           I revisited that idea, but with the goal of ensuring thatfor this new
           generative art piece <strong
             >every image generated would be a visual success.</strong
-          >
+          > -->
+          <p class="my-5 text-xl py-8">I revisited this idea with the goal of ensuring that <strong>every image generated would be a visual success</strong> in this new generative art piece.</p>
+
+          <h5>Challenges in Generative Design</h5>
+          <p><strong>In generative design, images are dynamically generated through code</strong>, which often results in highly chaotic and unpredictable visuals. This poses several challenges:</p>
+          <ol class="my-4">
+            <li><strong>Curating the output:</strong> Each dynamically generated image can vary significantly in quality, making it necessary <strong>to curate the results to select only the successful visuals</strong>.</li>
+            <li><strong>Lack of centralization:</strong> In previous projects, <strong>each visual came from a different code base</strong>, without any unified framework or consistency across the images.</li>
+          </ol>
+          
+          <p class="text-xl">In this project, my aim is to address these challenges by:</p>
+          <ol class="my-4">
+            <li>Creating a system where each generated image is not only visually successful but also <strong>distinct in style and form</strong>.</li>
+            <li>Incorporating a <strong>wide range of variations</strong>, enabling the code to produce a diverse set of outputs that are each aesthetically compelling.</li>
+          </ol>
         </p>
       </div>
 
@@ -1232,6 +1251,14 @@ if (v % 0.07 &#62; modulCycle) &#123; //0.005 à 0.035
         1 + minFormat * weight / 2 - t * minFormat * weight / 2,
     );
   &#125;</pre></code>
+  <details><summary>Updates of last version</summary>
+    <code><pre>//Minor modfications;
+secdCvs.ellipsoid(
+  1 + minFormat * length - t * minFormat * length * 0.5,
+  1 + minFormat * weight - t * minFormat * weight * 0.25,
+  2 + minFormat * weight * 0.5 - t * minFormat * weight * 0.25
+);</pre></code>
+  </details>
   <Gallerie
         columns={"grid-cols-2 md:grid-cols-6"}
         images={[
