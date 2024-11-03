@@ -1,0 +1,38 @@
+---
+interface Image {
+  src: string;
+  alt: string;
+  link: string;
+}
+
+interface Props {
+  images: Image[]; // Un tableau d'objets Image
+  columns: string;  
+  
+}
+
+const { images,columns }: Props = Astro.props;  // Utilisation des props dans le composant
+// const styleAdd = `grid-template-columns: repeat(${columns}, 1fr);`;
+
+---
+
+<!-- <div class="gallery grid  md:grid-flow-col"> -->
+ <!-- style={styleAdd} -->
+<div class=`gallery box-border grid ${columns} md:my-8  gap-1` >
+  {images.map((image) => (
+    <a href={image.link} target="_blank" rel="noopener noreferrer">
+    <div class=" relative">
+      <img 
+      src={image.src} data-src={image.src} data-lazy={image.src} alt={image.alt} 
+      class="lazy-image object-cover aspect-square rounded-md w-full h-auto"
+      />
+      <p class="absolute bottom-0 right-0 text-xs font-code text-zinc-400 leading-none p-1">{image.alt}</p>
+    </div>
+    </a>
+  ))}
+</div>
+<style>
+  .isInactive{
+    display:none;
+  }
+</style>

@@ -1,0 +1,548 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import Headings from "../../components/Headings.astro";
+import LinkCodeSource from "../../components/LinkCodeSource.astro";
+// import Gallerie from "../../components/Gallerie.astro";
+import GallerieGifs from "../../components/GallerieGifs.astro";
+import HeroProject from "../../components/HeroProject.astro";
+import IntroProject from "../../components/IntroProject.astro";
+import BackProjBt from "../../components/BackProjBt.astro";
+import BackProjTop from "../../components/BackProjTop.astro";
+
+
+const title = "Endless Loops of Controlled Chaos";
+const titleH1 = "A personal take on creativity";
+const titleH2 = "Projects";
+const titleSpan = "& explorations";
+const imagePath = "../../images/projects/objkt/";
+
+---
+
+<Layout
+title={title}
+description="Perfectly synchronized, endless loops of animated chaos: 1-3 second GIFs where particles follow smooth, invisible transitions, blending physics and phase shifts for seamless repetition." type="article"
+>
+<BackProjTop/>
+
+  <Headings titleH1={titleH1} titleH2={titleH2} titleSpan={titleSpan} />
+  <div id="projects" class="relative">
+    
+    <HeroProject
+      title={title}
+      dateRelease="2019-2021"
+      format="Gif Loops Generative"
+      plateforme="Objkt.com"
+      code="P5.js WEBGL"
+      src=""
+      link="https://objkt.com/users/tz1QxDQFtjzn7q851vx1McZ6DnJZtbJ8eaxc"
+      rep={"${imagePath}"}
+    />
+    
+    <div id="content">
+      <!-- intro -->
+      <IntroProject
+        introTitle="Seamless Loops of Animated Chaos"
+        introText="Perfectly synchronized 1-3 second GIFs, crafted with p5.js, where hundreds of particles move in endless, chaotic-looking cycles. Each piece is meticulously coded to create smooth, invisible transitions, combining physical forces and phase shifts for an undetectable loop."
+      />
+
+      <hr />
+
+      <div id="sommaire" class="my-8">
+        <details open="true">
+          <summary>What’s Inside</summary>
+          <ol class="font-code">
+            <li><a href="#">Why Loops Are So Cool</a></li>
+            <li><a href="#">Aha Moment in Generative Design</a></li>
+            <li><a href="#">Inspiration & ressources</a></li>
+            <li><a href="#">The Dawn of My Loops</a></li>
+            <li><a href="#">Perfect loops with oscillations</a></li>
+            <li><a href="#">Perfect loops with physics</a></li>
+            <li><a href="#">Perfect loops with particles system</a></li>
+            <li><a href="#">Final Reflexions</a></li>
+          </ol>
+        </details>
+      </div> 
+
+      <hr />
+
+      <!-- <img src="../../images/projects/objkt/Gif.avifs" alt="" class="max-w-[600px] et max-h-[600px] m-auto"> -->
+
+      <video controls autoplay loop class="m-auto md:max-w-[600px] md:max-h-[600px]">
+        <source src="/videos/loop.mp4" type="video/mp4" />
+        <p>
+          Your browser doesn't support HTML video.
+        </p>
+      </video>
+
+      <p class="text-center m-auto">Loop with noise and dispersion </p>
+      <p class="text-center m-auto text-sm">(Watch the progress bar as the end loops back to the start.)</p>
+
+      
+      <!-- History project -->
+      <div id="why">
+        <h4>Why Loops Are So Cool</h4>
+
+        
+        <div class="md:flex md:gap-2">
+          <img src="https://upload.wikimedia.org/wikipedia/en/d/da/DarkNetflixPosterEnglish.jpg" alt="Dark on netflix" class="w-max-[258px] h-max[387px] object-cover rounded-md md:my-4 m-auto">
+          <p>
+            <b>I've always been captivated by sci-fi stories</b>, especially those centered on the concept of <strong>time loops</strong>. There’s a fascinating, almost unsettling quality to being caught in a <b>cycle</b> where events loop back to the beginning, repeating with eerie precision. Stories like <i>The Time Machine</i> by H.G. Wells, which opened my imagination to the possibilities and <strong>paradoxes of time</strong>, films like <i>Predestination</i> and <i>12 Monkeys</i>, and especially the German series <strong><i>Dark</i></strong> on Netflix, took this idea to new heights, exploring the dark consequences of time looping back on itself.
+          </p>
+        </div>
+        
+        <p class="mt-8"><b>In a different way, visual loops capture a similar fascination.</b> A perfectly synchronized, seamless animation loop has a hypnotic, almost meditative quality. <strong>Watching it, you get a sense of calm</strong>, like a visual heartbeat that’s forever in rhythm, pulling you into its infinite return. It’s as if you’re witnessing a closed-off world, one that’s set to replay forever, its own tiny universe obeying a law of perpetual motion.
+        </p>
+        
+        <em class="text-2xl text-balance w-max-prose">Now picture this entire scene cycling flawlessly every few minutes, as if time itself were on repeat.</em>
+        <img src="../../images/projects/objkt/broadway.webp" alt="" class="rounded-md my-4">
+        <p class="mt-8"> <strong>Imagine yourself standing in an office building on Broadway, looking down at the bustling street below.</strong>  You see a sea of people, cars weaving through intersections, the energy of the city flowing in a dynamic rhythm. <strong>Imagine that this entire scene repeats on a perfect loop every few minutes</strong>—every person, every vehicle returning to the same spot, over and over, <strong>as if time itself is stuck in a loop</strong>. It’s a vision that’s both captivating and surreal, and <strong>it’s this concept that has guided all the loops I create</strong>—a chance to capture that haunting, mesmerizing feeling of being suspended in an endless, perfectly recurring moment.</p>
+        
+        
+      </div>
+      <hr>
+
+      <div id="revelation">
+        <h4>Aha Moment in Generative Design</h4>
+        <div class="lg:flex lg:items-start lg:flex-row-reverse">
+          
+          <p class="mt-1 md:w-2/3">
+            <strong>My journey into perfect loops truly began with a revelation— <a href="https://youtu.be/ZI1dmHv3MeM?si=65ufGRqhe4lQ7BLX">a single tutorial by Daniel Shiffman, The Coding Train: Looping GIFs</a>.</strong> This tutorial opened up a whole new world of creative possibilities, showing me how to craft endlessly repeating GIFs with seamless transitions. <strong>Through Shiffman’s guidance, I discovered how to create the illusion of infinite motion, using <a href="https://p5js.org/" title="p5.js">p5.js</a> on the HTML canvas to bring my ideas to life.</strong>  What made this process even more exciting was the introduction of Perlin noise, a method of adding randomness that retains fluidity. By incorporating <a href="https://gist.github.com/PARC6502/85c99c04c9b3c6ae52c3c27605b4df0a" title="Perlin Noise 4D">Perlin noise 4D</a> (but not always necessary), I could generate a unique variation of the same loop every time, allowing me to produce an array of distinct GIFs from the same underlying code. <strong>This approach quickly became the foundation for countless experiments, sparking the creation of an entire collection of generative loops.</strong> 
+          </p>
+          <figure>
+            <img src="../../images/projects/objkt/loop00.gif" alt="" class="md:pr-3 md:pt-3 object-scale-down rounded-md"/>
+            <figcaption><a href="https://editor.p5js.org/codingJM/sketches/DKXruub3i">Code in p5 editor</a></figcaption>
+          </figure>
+        </div>
+
+        
+      </div>
+      <hr />
+
+      <did id="ressources">
+        <h4>Inspiration & ressources</h4>
+
+        <p>Creating seamless loops requires both skill and artistry, and <strong>I’ve been fortunate to learn from and be inspired by several incredible creative coders</strong> who push the boundaries of generative art. Here are a few whose work has influenced me deeply, each offering unique perspectives and techniques for crafting mesmerizing loops:</p>
+
+        <ul>
+            <li><strong><a href="https://bleuje.com/about/" target="_blank" rel="noopener noreferrer">Etienne Jacob (BleuJe)</a></strong> – Known for his intricate and often hypnotic black-and-white loops, Etienne’s work combines mathematics with generative art, creating complex animations that feel both organic and mechanical.</li>
+            
+            <li><strong><a href="https://beesandbombs.com/" target="_blank" rel="noopener noreferrer">Dave Whyte (Bees and Bombs)</a></strong> – Dave’s loops are celebrated for their vibrant color schemes and satisfying, endlessly repeating patterns. His work, which often features abstract, playful animations, has been a major influence on the visual rhythm and aesthetic of my own creations.</li>
+            
+            <li><strong><a href="https://observablehq.com/@makio135/creative-coding" target="_blank" rel="noopener noreferrer">Lionel Radisson (Makio135)</a></strong> – Lionel combines 3D and 2D techniques to create loops that are visually rich and deeply engaging. His expertise in blending generative processes with design principles has been invaluable, providing both inspiration and technical insights.</li>
+        </ul>
+
+        <p class="text-xl mt-6">Each of these artists has contributed immensely to the field of generative loops, not only through their art but also by sharing insights into their creative processes. Their work continues to be a source of motivation as I explore the endless possibilities of looped animations.</p>
+      </did>
+      <hr />
+
+      <div id="first">
+        <h4>The Dawn of My Loops</h4>
+        
+
+        <p class="mt-4"><strong>My initial steps into creating seamless loops started with simple 2D animations.</strong> These early experiments were a way to familiarize myself with the HTML canvas and explore its potential through p5.js. <strong>2019 was a year of exploration and learning</strong> , where I focused on creating visual loops—often with mixed results. Many of the loops were rough, not always hitting the mark, but each attempt taught me something new about the intricacies of timing, transitions, and movement.</p>
+
+        <p class="mt-4">In total, <strong>I made over 200 gifs that year, sharing some with a private Facebook group dedicated to p5.js</strong>. It was here that I received valuable feedback and learned from others, allowing me to refine my approach and gain new insights. This small but <strong>vibrant community of creative coders became a source of motivation and support</strong>, and it was an incredible environment for growth.</p>
+
+        <p class="mt-4"><strong>Looking back, these early loops may not have been polished, but they laid the foundation for everything that followed</strong>, helping me understand the canvas as a tool and the art of looping as a craft.</p>    
+      </div>
+      <hr />
+
+      <div id="oscillations">
+        <h4>Perfect loops with oscillations algorithms</h4>
+
+        <p class="text-xl"><strong>Creating a seamless loop requires that the beginning aligns perfectly with the end of the sequence.</strong> </p>
+
+        
+        <p class="mt-8">In creative coding, if you want a continuous, repeating progression where the beginning seamlessly matches the end, oscillation is a powerful solution. Here’s why :</p>
+      
+
+        <ul>
+          <li><strong>Smooth Transition:</strong> Oscillation, or sinusoidal movement, provides a smooth and natural flow. The number rises to a peak, then descends in a mirrored pattern, creating a continuous and predictable wave that’s ideal for loops.</li>
+
+          <li><strong>Automatic Looping:</strong> Unlike linear progression, oscillation naturally “bounces back” to its starting point. This means that, without extra coding, you get a seamless cycle where the end perfectly connects to the beginning.</li>
+
+          <li><strong>Controlled Rhythm:</strong> With an oscillation function, you can control the speed, amplitude, and frequency of the cycle, allowing for gradual or fast-paced changes that maintain their cyclical nature.</li>
+
+          <li><strong>Avoiding Abrupt Jumps:</strong> Linear increments can create a jarring reset when restarting a loop. Oscillations, on the other hand, follow a path that softly reverses direction, meaning you avoid any sharp, unnatural breaks.</li>
+
+          <li><strong>Intuitive with Sine and Cosine:</strong> Sine and cosine functions are foundational in programming for cyclic behavior. They provide a continuous oscillating pattern (from -1 to 1) that can easily be adjusted for various ranges, keeping each cycle identical to the previous.</li>
+        </ul>
+
+        <p>Maybe a loop would be more explicite</p>
+        <figure class="mt-4">
+          <img src="../../images/projects/objkt/loop07.avifs" alt="" class="w-[400px] rounded-md">
+          <figCaption>Oscillation Cycle - Offsets</figCaption>
+        </figure>
+
+        <p class="mt-4"><strong>By using oscillation, you create a loop that flows naturally and predictably</strong>—perfect for some situations where you want an evolving value to seamlessly repeat without noticeable breaks.</p>
+
+        <p class="mt-4"><strong>In this simple gif below, our animation cycles over 180 keyframes of a starry sky, without oscillations.</strong></p>
+
+        <p class="my-8">Each star has a lifespan, so the sequence must start with stars that were 'born' at the end and will 'die' shortly after the loop begins again. It’s the paradox of temporal loops... <strong>And honestly, I find this kind of challenge incredibly fun!</strong></p>
+
+        <figure class="mt-4">
+          <img src="../../images/projects/objkt/loop05.gif" alt="" class="w-[400px] rounded-md">
+          <figCaption>Non Looped animation - <a href="https://editor.p5js.org/codingJM/sketches/P_sOZYThL4">See the code</a></figCaption>
+        </figure>
+        
+        <p class="mt-4">With oscillations, our animation cycle over 180 keyframes without interruptions.</p>
+        <figure class="mt-4">
+          <img src="../../images/projects/objkt/loop06.gif" alt="" class="w-[400px] rounded-md">
+          <figCaption>Looped animation - <a href="https://editor.p5js.org/codingJM/sketches/ldBnv_D8_">See the code</a></figCaption>
+        </figure>
+
+
+        <h5>And how can we achieve this with JavaScript code?</h5>
+        <p>We'll do this in about 20 lines of code.</p>
+        
+        <ul>
+          <li><strong>1. Normalize Time for the Loop Cycle:</strong> 
+            <br>To control the timing and create a seamless loop, we calculate a normalized time variable, <code>tms</code>:
+            <pre><code>tms = (frameCount / nbFrames) % 1;</code></pre>
+            This line ensures that <code>tms</code> smoothly cycles from 0 to 1, then resets at the start of each loop.
+          </li>
+        
+          <li><strong>2. Create an Array of Particles:</strong> 
+            <br>We generate an array of particles with an initial loop:
+            <pre><code>for (let i = 0; i &lt; 1000; i++) &#123;
+  p = new Particle();
+  particles.push(p);
+&#125;</code></pre>
+            Each particle is initialized with random <code>x</code>, <code>y</code> positions, and a unique phase.
+          </li>
+        
+          <li><strong>3. Offset Each Particle Within the Global Cycle:</strong> 
+            <br>Each particle’s radius oscillates independently based on its phase in the <code>class Particle</code>. 
+            <code>tms</code> shifts it within the overall cycle. This technique allows all particles to oscillate together but with unique offsets:
+            <pre><code>this.r = sin(this.phase + tms * TAU) * 2;</code></pre>
+            Here there's Two sequences in the cycle.
+          </li>
+        
+        </ul>
+        
+
+        <p>See the code in p5 Editor below for more explanations (click on <img class="inline w-[45px]" src="../../images/projects/click-code-p5.png" /> above )</p>
+        
+        
+        <h5 class="text-xl">Some loops I made with this technique<small> (click for animated versions)</small>:</h5>
+        <GallerieGifs
+          columns={"grid-cols-2 lg:grid-cols-4"}
+          images={[
+            {
+              src: "../../images/projects/objkt/frame/Tango152b33.webp",
+              alt: "Tango NFT",
+              link:"https://objkt.com/tokens/hicetnunc/10747"
+            },
+            {
+              src: "../../images/projects/objkt/frame/Just-moving.webp",
+              alt: "Just moving Token HEN",
+              link:"https://objkt.com/tokens/hicetnunc/300922"
+            },
+            {
+              src: "../../images/projects/objkt/frame/Connectors.webp",
+              alt: "Connectors Token HEN",
+              link:"https://objkt.com/tokens/hicetnunc/493454"
+            },
+            {
+              src: "../../images/projects/objkt/frame/effet.webp",
+              alt: "#つぶやき",
+              link:"https://objkt.com/tokens/KT18kahJVMCTScKuoYKgajEjSXWd83GJYT1h/24"
+            },
+          ]}
+        />
+
+        <h5>Limits of Oscillations in Perfect Cycles</h5>
+
+        <p>While this cyclic system forms the basis of many loops, there are cases where movement cannot rely on oscillations alone. <strong>In fact, most loops in WebGL require physical properties</strong> such as mass, velocity, acceleration, and attraction to simulate realistic forces. <strong>These types of properties are not easily managed through oscillations</strong>, as they involve more dynamic, physics-based calculations that add depth and complexity to motion.</p>  
+      </div>
+
+      <div id="physics">
+        <h4>Perfect loops with physics algorithms</h4>
+        <p>Now look at this kind of generative animation</p>
+        <figure>
+          <img src="../../images/projects/objkt/loop01.gif" alt="" class="w-[400px] rounded-md">
+          <figCaption>Non looped animation - <a href="https://editor.p5js.org/codingJM/sketches/P_sOZYThL4">See the code</a></figCaption>
+        </figure>
+        <p class="mt-6">
+          This animation captures <strong>a field of particles, each following its own unique trajectory across the canvas</strong>. Imagine standing high above a city street, observing countless individuals and vehicles moving with purpose, yet each with their own path and pace. Here, however, lies the challenge: <strong>How do we take this scene and make it loop seamlessly, creating an endless cycle where each particle returns to its starting position</strong>, recreating the exact same dynamic?
+        </p>
+        <p class="mt-8">
+          Particles in javascript are small, self-contained objects that can move, interact, and respond to forces, creating complex visuals when used together in a particles. Each particle usually has properties like position, velocity, and lifespan, allowing it to follow a unique path across the canvas.
+        </p>
+        
+        <h5>
+          How Do You Create a Perfect Loop with Objects Under Natural Forces?
+        </h5>
+        <p class="mt-8">
+          To gain a deeper understanding of the physics and looping techniques behind particle systems, I recommend <a href="https://natureofcode.com/forces/" rel="noopener noreferrer">Chapter "Forces" from Daniel Shiffman's book The Nature of Code</a>, which delves into the mechanics of particle movement.
+        </p>
+        <p class="mt-6">
+          <strong>At first glance, it might seem logical to ensure that every particle in the animation follows its path precisely</strong> so that, after a certain number of frames, it returns to its exact starting position. Each particle would "remember" its journey, repeating it endlessly in perfect synchronization. <strong>However, this approach, while intuitive, is deceptively complex and ultimately unnecessary.</strong>
+        </p>
+        
+        <p class="text-xl my-8">A simpler and more elegant solution, inspired by the concept of reincarnation.</p>
+        <img src="../../images/projects/objkt/boudhiste.webp" alt="" class="w-[400px] rounded-md">
+        <p class="mt-6">
+          <strong>A conversation with a friend who practices Buddhism revealed a simpler and more elegant solution, inspired by the concept of reincarnation</strong>. In Buddhist philosophy, when someone is reborn, their physical form is replaced entirely—they do not return in the same body. Instead, it's the spiritual properties that carry forward into a new incarnation. Applying this idea to our looping particles, we don’t need each particle to retrace its path to create a seamless cycle. <strong>Instead, each particle can "die" when it moves off-screen, and a new particle, with identical properties, can be "reborn" on the opposite side.</strong>
+        </p>
+
+        <h5>Destruction and rebirth (a reincarnated soul)</h5>
+        
+        <p class="mt-6">
+          <strong>In this way, each new particle reincarnates the properties—velocity, direction, and size—of its corresponding particle from the previous cycle through the karma array.</strong> This approach allows us to create an organized chaos that feels like a single, endless loop without the particles needing to remember their previous positions. <strong>It’s a looping illusion that feels organic</strong>, yet is achieved through strategic destruction and rebirth, much like a reincarnated soul.
+        </p>
+
+        <figure class="my-6">
+          <img src="../../images/projects/objkt/loop02.gif" alt="" class="w-[400px] rounded-md">
+          <figCaption>Looped animation - <a href="https://editor.p5js.org/codingJM/sketches/928KPMGjH">See the code</a></figCaption>
+        </figure>
+
+        <p>However, achieving a perfect loop comes with a subtle challenge: if a particle’s velocity is too low, it might not have enough time to travel fully across the screen within the defined loop cycle. This can lead to visible breaks in the loop where particles appear to "freeze" or disappear unexpectedly, breaking the illusion of seamless motion. To address this, it’s essential to set a minimum velocity for each particle, ensuring that it completes its journey across the screen within the temporal bounds of the loop. This way, every particle can "live" its entire cycle and contribute to the fluidity of the animation, enhancing the illusion of infinite, uninterrupted motion.</p>
+        
+        <p class="mt-8">
+          <strong>When recording the loop as a GIF or video, it’s essential to avoid starting the capture from the very beginning of the cycle. Instead, allow the slowest particle enough time to travel across the entire screen, ensuring that it completes at least one full cycle.</strong> This approach prevents visible "jumps" or disruptions in the loop, as every particle will already be in synchronized motion. By capturing after the particles have naturally settled into their paths, we achieve a more seamless, hypnotic loop, where each element appears to flow endlessly without interruption.
+        </p>
+
+        <h5>Ensuring a Perfect, Seamless Loop</h5>
+        <ul>
+          <li>Set a minimum velocity for each particle to avoid breaks in the loop.</li>
+          <li>Ensure particles complete their full journey within the loop cycle.</li>
+          <li>Avoid starting the recording at the beginning of the loop cycle.</li>
+          <li>Let particles naturally settle into synchronized paths before capturing.</li>
+          <li>Start recording after particles have completed at least one full cycle for a smooth, uninterrupted loop.</li>
+        </ul>
+
+
+        <h5 class="text-xl">Here are a few loops I crafted using this technique <small>(click for animated versions)</small>:</h5>
+
+        <GallerieGifs
+          columns={"grid-cols-2 lg:grid-cols-4"}
+          images={[
+            {
+              src: "../../images/projects/objkt/frame/reincarnation.webp",
+              alt: "Reincarnation, my 1st NFT",
+              link:"https://objkt.com/tokens/hicetnunc/9014"
+            },
+            {
+              src: "../../images/projects/objkt/frame/bubble.webp",
+              alt: "Bubble Token HEN",
+              link:"https://objkt.com/tokens/hicetnunc/36844"
+            },
+            {
+              src: "../../images/projects/objkt/frame/Minimal.webp",
+              alt: "Minimal Token HEN",
+              link:"https://objkt.com/tokens/hicetnunc/429903"
+            },
+            {
+              src: "../../images/projects/objkt/frame/blasting.webp",
+              alt: "Blasting Token HEN",
+              link:"https://objkt.com/tokens/hicetnunc/556957"
+            },
+            {
+              src: "../../images/projects/objkt/frame/bipolar.webp",
+              alt: "B(i)polar Token Objkt",
+              link:"https://objkt.com/tokens/KT18kahJVMCTScKuoYKgajEjSXWd83GJYT1h/1"
+            },
+            {
+              src: "../../images/projects/objkt/frame/absolute.webp",
+              alt: "Absolute Token Objkt",
+              link:"https://objkt.com/tokens/KT18kahJVMCTScKuoYKgajEjSXWd83GJYT1h/2"
+            },
+          ]}
+        />
+        <p class="mt-8">
+          In many of the GIFs above, <strong>randomness is substituted with a Perlin noise</strong>, a technique that brings a more organic and natural quality to the animation. Unlike pure randomness, which can feel abrupt and disjointed, <strong>noise produces a smooth, flowing variation that resembles patterns found in nature</strong>. This subtle change gives each element a lifelike movement, adding a cohesive, almost rhythmic quality to the visuals, making them feel more connected and pleasing to the eye.
+        </p>
+        <p class="my-8">
+          In reality, there’s more happening in these GIFs than meets the eye to give them a natural, organic quality. <strong>The most impactful technique is animating a particle system rather than individual particles on each keyframe.</strong> By programming an entire system, I can create a far denser and more intricate flow of motion. Each particle interacts within the system, contributing to a collective visual that feels seamless and richly layered. This approach not only provides continuity but also introduces subtle variations and depth, making the final result look far more complex and immersive.
+        </p>
+
+      </div>
+      <hr />
+
+      <div id="systems">
+        <h4>Perfect loops with particles system</h4>
+        <p>
+          If you’re not already familiar with particles or if you just want to understand the looping techniques used here, let’s start with a quick refresher. In JavaScript, <strong>particles are small, self-contained objects</strong> that can move, interact, and respond to forces, creating complex visuals when used together in a particle system. Each particle usually has properties like position, velocity, and lifespan, allowing it to follow a unique path across the canvas. <strong>By organizing these particles into a system, we can simulate intricate behaviors</strong> like flowing water, drifting smoke, or, as in this case, a perfectly looping animation.
+        </p>
+        <p class="mt-8">
+          To gain a deeper understanding of the physics and looping techniques behind particle systems, I recommend <a target="_blank" href="https://natureofcode.com/forces/" rel="noopener noreferrer">Chapter "Forces" from Daniel Shiffman's book The Nature of Code</a>, which delves into the mechanics of particle movement. Additionally, <a target="_blank" href="https://www.youtube.com/watch?app=desktop&v=syR0klfncCk" rel="noopener noreferrer">Shiffman’s Particle System tutorial on The Coding Train</a> offers insights into particle-based visuals and is a helpful reference for implementing looped particle systems.
+        </p>
+
+        <figure class="my-6">
+          <img src="../../images/projects/objkt/loop03.gif" alt="" class="w-[400px] rounded-md">
+          <figCaption>Non Looped animation - <a href="https://editor.p5js.org/codingJM/sketches/F9OubCe16">See the code</a></figCaption>
+        </figure>
+
+        <figure class="my-6">
+          <img src="../../images/projects/objkt/loop04.gif" alt="" class="w-[400px] rounded-md">
+          <figCaption>Looped animation - <a href="https://editor.p5js.org/codingJM/sketches/1eNYcJSFz">See the code</a></figCaption>
+        </figure>
+        <p>
+          In this particle system, the logic remains similar to the previous chapter: each particle "reincarnates" into the next cycle, preserving certain properties. Here, however, each particle's position and velocity are influenced by noise, giving it a smooth, natural motion while adhering to the loop cycle. Here’s how it works:
+        </p>
+        <ul>
+          <li>Setting the Offset: <br> <code>const xoff = map(sin(tms * TAU), -1, 1, 0, 2); // x offset changes sinusoidally over the loop cycle</code><br>We start by creating a sinusoidal oscillation <code>(sin(tms * TAU))</code> to serve as a cyclic time marker. Mapping this value from -1 to 1 into 0 to 2 allows us to use <code>xoff</code> as an input for the noise function, which cycles smoothly, matching the timing of the loop.
+          </li>
+          <li>Generating Smooth, Cyclic Horizontal Motion with Noise: <br><code>this.pos.x = noise(xoff) * width;</code> <br>The noise (xoff) function provides a smooth, pseudo-random value that changes gradually based on the offset in the cycle.
+          </li>
+          <li>Adding Vertical Velocity with Variation: <br><code>this.vel = createVector(map(noise(1000 + xoff * 20), 0, 1, -2, 2), -1);</code> Here, we add an upward velocity with some horizontal variation by mapping the noise value to a range of -2 to 2 for the x component. This ensures that particles move upward consistently (y = -1), while the horizontal component varies, adding depth and complexity to the loop. By using <code>1000 + xoff * 20</code> as an offset, we ensure the noise remains consistent but distinct, avoiding repetitive patterns.
+          </li>
+        </ul>
+        <p class="mt-4">By synchronizing noise with the cyclic time marker <code>tms</code>, each particle’s path flows smoothly within the loop, maintaining an organic motion that feels continuous, even over repeated cycles.</p>
+        <p class="mt-4">The vast majority of my GIFs use this technique to create natural, seamless loops.</p>
+
+        <h5 class="text-xl">Selection of Perfect Loops Using a Particle System <small>(click for animated versions)</small>:</h5>
+
+        <GallerieGifs
+          columns={"grid-cols-2 lg:grid-cols-4"}
+          images={[
+            {
+              src: "../../images/projects/objkt/frame/histeric.webp",
+              alt: "Histeric Toertl Token Objkt",
+              link:"https://objkt.com/tokens/hicetnunc/340509"
+            },
+            {
+              src: "../../images/projects/objkt/frame/floating.webp",
+              alt: "Floating Token Objkt",
+              link:"https://objkt.com/tokens/hicetnunc/535474"
+            },
+            {
+              src: "../../images/projects/objkt/frame/four-agreements.webp",
+              alt: "4 Agreements Token Objkt",
+              link:"https://objkt.com/tokens/hicetnunc/335783"
+            },
+            {
+              src: "../../images/projects/objkt/frame/citysoon.webp",
+              alt: "Citysoon Token Objkt",
+              link:"https://objkt.com/tokens/hicetnunc/357711"
+            },
+            {
+              src: "../../images/projects/objkt/frame/toertl.webp",
+              alt: "Noise Toertl Token Objkt",
+              link:"https://objkt.com/tokens/hicetnunc/525054"
+            },
+            {
+              src: "../../images/projects/objkt/frame/SPACE-COLONIALISM.webp",
+              alt: "Space Token Objkt",
+              link:"https://objkt.com/tokens/hicetnunc/384925"
+            },
+            {
+              src: "../../images/projects/objkt/frame/LES-TOURNOYANTS.webp",
+              alt: "Les Tournoyants Token Objkt",
+              link:"https://objkt.com/tokens/hicetnunc/409317"
+            },
+            {
+              src: "../../images/projects/objkt/frame/structure.webp",
+              alt: "Structure Token Objkt",
+              link:"https://objkt.com/tokens/hicetnunc/449224"
+            },
+            {
+              src: "../../images/projects/objkt/frame/blackPal8.webp",
+              alt: "black Pal 8 Token Objkt",
+              link:"https://objkt.com/tokens/hicetnunc/414379"
+            },
+            {
+              src: "../../images/projects/objkt/frame/149-68770.webp",
+              alt: "149-68770 Token Objkt",
+              link:"https://objkt.com/tokens/hicetnunc/456161"
+            },
+            {
+              src: "../../images/projects/objkt/frame/161-37818.webp",
+              alt: "161-37818 Token Objkt",
+              link:"https://objkt.com/tokens/hicetnunc/482331"
+            },
+            {
+              src: "../../images/projects/objkt/frame/Noise-on-fire.webp",
+              alt: "Noise Fire Token Objkt",
+              link:"https://objkt.com/tokens/hicetnunc/534427"
+            },
+            {
+              src: "../../images/projects/objkt/frame/Dispersion-2.webp",
+              alt: "Dispersion2 Token Objkt",
+              link:"https://objkt.com/tokens/hicetnunc/352533"
+            },
+            {
+              src: "../../images/projects/objkt/frame/Connectors.webp",
+              alt: "Connectors Token Objkt",
+              link:"https://objkt.com/tokens/hicetnunc/493454"
+            },
+            {
+              src: "../../images/projects/objkt/frame/Permute-Coloured-Minds.webp",
+              alt: "Permute Token Objkt",
+              link:"https://objkt.com/tokens/hicetnunc/588450"
+            },
+            {
+              src: "../../images/projects/objkt/frame/4DGear2.webp",
+              alt: "4DGear2 Token Objkt",
+              link:"https://objkt.com/tokens/hicetnunc/572628"
+            },
+          ]}
+        />
+
+       
+      </div>
+
+      <hr />
+
+      <div id="conclusion">
+        <h4>Final Reflections</h4>
+        <p>
+          <strong>Revisiting my creations from 2019 to 2021 has sparked a renewed desire to dive back into this world</strong>, bringing these works to specialized platforms dedicated to generative coding. The GIFs I previously shared on objkt.com were carefully curated; each piece was the result of code capable of generating infinite variations, yet I would only select three or four outputs to export as seamless loops, whether in GIF or video form. <strong>Now, I’m inspired to take one of these GIFs to a new level, refining it into a long-form generative piece</strong> that could endlessly evolve, captivating viewers in a continuous, organic flow.
+        </p>
+
+        <p class="my-4">
+          If you enjoy this project, If you enjoy this project, you can still acquire <a target="_blank" href="https://objkt.com/users/tz1QxDQFtjzn7q851vx1McZ6DnJZtbJ8eaxc">a few remaining editions as NFTs on Objkt.com</a>.
+        </p>
+
+        <p class="text-xl py-4">
+          Cheers for making it all the way through!
+          <i class="fa-solid fa-face-kiss-wink-heart animate-bounce"></i>
+        </p>
+
+        <BackProjBt/>
+      </div>
+    </div>
+  </div>
+  <script src="/scripts/hero.js" defer></script>
+  <script is:inline>
+    const imgHero = document.getElementById("imgHero");
+    const arrImages = ["all-objkt.gif"]
+    
+    const imgRdm =
+      "../../images/projects/objkt/"+
+    arrImages[Math.floor(Math.random() * arrImages.length)] ;
+    //console.log(imgRdm);
+    imgHero.setAttribute("src", imgRdm);
+  </script>
+
+  <script is:inline>
+    const sections = [
+      "#why",
+      "#revelation",
+      "#ressources",
+      "#first",
+      "#oscillations",
+      "#physics",
+      "#systems",
+      "#conclusion",
+    ];
+
+    // Select all anchor elements within the summary list
+    const links = document.querySelectorAll("#sommaire ol a");
+
+    // Use map to create event listeners for each link
+    Array.from(links).map((link, index) =>
+      link.addEventListener("click", (event) => {
+        event.preventDefault();
+        gsap.to(window, {
+          duration: 1,
+          scrollTo: { y: sections[index] },
+          ease: "power2.out",
+        });
+      })
+    );
+  </script>
+  
+</Layout>
+

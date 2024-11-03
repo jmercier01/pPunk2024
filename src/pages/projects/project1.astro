@@ -5,6 +5,8 @@ import LinkCodeSource from "../../components/LinkCodeSource.astro";
 import Gallerie from "../../components/Gallerie.astro";
 import HeroProject from "../../components/HeroProject.astro";
 import IntroProject from "../../components/IntroProject.astro";
+import BackProjBt from "../../components/BackProjBt.astro";
+import BackProjTop from "../../components/BackProjTop.astro";
 
 
 const title = "Anisotropic Sculpted Flow";
@@ -19,7 +21,7 @@ const imagePath = "../../images/projects/Lights/mixing-";
 title={title}
 description="Explore process of 'Anisotropic Sculpted Flow,' a generative art combining complex algorithms, 3D forms, and dynamic lighting. Discover the unique aesthetic of shapes sculpted through anisotropic techniques and inspired by organic flow." type="article"
 >
-<div class="text-right absolute top-32 left-0 px-5 bg-accent"><a class="text-xs underline" href="/projects/"><span class="text-jour">Back</span></a></div>
+<BackProjTop/>
 
   <Headings titleH1={titleH1} titleH2={titleH2} titleSpan={titleSpan} />
   <div id="projects" class="relative">
@@ -30,8 +32,8 @@ description="Explore process of 'Anisotropic Sculpted Flow,' a generative art co
       format="Generative"
       plateforme="FxHash?"
       code="P5.js WEBGL"
-      src="../../images/projects/Lights/mixing-68046.webp"
-      link="Soon"
+      src=""
+      link=""
       rep={"${imagePath}"}
     />
     <!-- rep="../../images/projects/Lights/V3-1/final0" -->
@@ -69,9 +71,9 @@ description="Explore process of 'Anisotropic Sculpted Flow,' a generative art co
       <!-- History project -->
       <div id="creation">
         <h4>What Drives the Creation</h4>
-        <div class="inline-flex gap-4">
+        <div class="md:inline-flex md:gap-4">
           <img
-            class="thumbnail w-1/3 object-cover rounded-md"
+            class="thumbnail hidden md:block md:w-1/3 object-cover rounded-md"
             src="../../images/projects/Lights/pizza-punk-design-generatif-sk16-v2-08.webp"
             data-src="../../images/projects/Lights/pizza-punk-design-generatif-sk16-v2-08.webp"
             alt="Generative explorations in 2019 - #1"
@@ -123,26 +125,21 @@ description="Explore process of 'Anisotropic Sculpted Flow,' a generative art co
           ]}
         />
 
-        <!-- <p class="my-5 text-xl py-8">
-          I revisited that idea, but with the goal of ensuring thatfor this new
-          generative art piece <strong
-            >every image generated would be a visual success.</strong
-          > -->
-          <p class="my-5 text-xl py-8">I revisited this idea with the goal of ensuring that <strong>every image generated would be a visual success</strong> in this new generative art piece.</p>
+        
+        <p class="my-5 text-xl py-8">I revisited this idea with the goal of ensuring that <strong>every image generated would be a visual success</strong> in this new generative art piece.</p>
 
-          <h5>Challenges in Generative Design</h5>
-          <p><strong>In generative design, images are dynamically generated through code</strong>, which often results in highly chaotic and unpredictable visuals. This poses several challenges:</p>
-          <ol class="my-4">
-            <li><strong>Curating the output:</strong> Each dynamically generated image can vary significantly in quality, making it necessary <strong>to curate the results to select only the successful visuals</strong>.</li>
-            <li><strong>Lack of centralization:</strong> In previous projects, <strong>each visual came from a different code base</strong>, without any unified framework or consistency across the images.</li>
-          </ol>
-          
-          <p class="text-xl">In this project, my aim is to address these challenges by:</p>
-          <ol class="my-4">
-            <li>Creating a system where each generated image is not only visually successful but also <strong>distinct in style and form</strong>.</li>
-            <li>Incorporating a <strong>wide range of variations</strong>, enabling the code to produce a diverse set of outputs that are each aesthetically compelling.</li>
-          </ol>
-        </p>
+        <h5>Challenges in Generative Design</h5>
+        <p><strong>In generative design, images are dynamically generated through code</strong>, which often results in highly chaotic and unpredictable visuals. This poses several challenges:</p>
+        <ol class="my-4">
+          <li><strong>Curating the output:</strong> Each dynamically generated image can vary significantly in quality, making it necessary <strong>to curate the results to select only the successful visuals</strong>.</li>
+          <li><strong>Lack of centralization:</strong> In previous projects, <strong>each visual came from a different code base</strong>, without any unified framework or consistency across the images.</li>
+        </ol>
+        
+        <p class="text-xl">In this project, my aim is to address these challenges by:</p>
+        <ol class="my-4">
+          <li>Creating a system where each generated image is not only visually successful but also <strong>distinct in style and form</strong>.</li>
+          <li>Incorporating a <strong>wide range of variations</strong>, enabling the code to produce a diverse set of outputs that are each aesthetically compelling.</li>
+        </ol>
       </div>
 
       <hr />
@@ -190,7 +187,7 @@ description="Explore process of 'Anisotropic Sculpted Flow,' a generative art co
           ]}
         />
         <img
-          class="rounded-md my-2 w-2/3"
+          class="rounded-md my-2 md:w-2/3 w-full"
           src="../../images/projects/Lights/rotationsLights.webp"
           alt="lighting system rotation XYZ"
         />
@@ -270,6 +267,7 @@ description="Explore process of 'Anisotropic Sculpted Flow,' a generative art co
             <img
               src="../../images/projects/Lights/rotationx.webp"
               alt="Rotate lights around the X axis"
+              class="rounded-md"
             />
             <caption class="line-clamp-2"
               >Rotate lights around the X axis</caption
@@ -279,6 +277,7 @@ description="Explore process of 'Anisotropic Sculpted Flow,' a generative art co
             <img
               src="../../images/projects/Lights/rotationy.webp"
               alt="Rotate lights around the Y axis"
+              class="rounded-md"
             />
             <caption class="line-clamp-2"
               >Rotate lights around the Y axis</caption
@@ -286,7 +285,7 @@ description="Explore process of 'Anisotropic Sculpted Flow,' a generative art co
           </div>
           <div class="md:w-1/3">
             <img
-              class=""
+              class="rounded-md"
               src="../../images/projects/Lights/rotationz.webp"
               alt="Rotate lights around the Z axis"
             />
@@ -375,15 +374,15 @@ description="Explore process of 'Anisotropic Sculpted Flow,' a generative art co
           the middle (with <b>polar coordinates</b> again)
         </p>
 
-        <div class="flex gap-0 mb-3 mt-8">
+        <div class="flex gap-1 mb-3 mt-8">
           <img
-            class="w-1/2 p-1"
+            class="w-1/2 rounded-md"
             src="../../images/projects/Lights/rendu-lights0.gif"
             alt="Rotational light on immmobile objects"
             title="Rotational light on immmobile objects"
           />
           <img
-            class="w-1/2 p-1"
+            class="w-1/2 rounded-md"
             src="../../images/projects/Lights/rendu-lights.gif"
             alt="Rotational light on self rotate objects"
             title="Rotational light on self rotate objects"
@@ -478,9 +477,10 @@ description="Explore process of 'Anisotropic Sculpted Flow,' a generative art co
             By <b>adding time</b> into the angle calculation of the oscillation,
             we create motion.
             <img
-              class="mt-8"
+              class="mt-8 rounded-md"
               src="../../images/projects/Lights/chore0.gif"
               alt="Put on your red shoes and dance the blues"
+              
             />
             <details open>
               <summary>Code</summary>
@@ -1362,10 +1362,7 @@ secdCvs.ellipsoid(
           <i class="fa-regular fa-face-smile-beam animate-bounce"></i>
         </p>
 
-        <p class="mt-24">
-          <a class="hover:animate-pulse" href="/projects/">⇱ Back to Projects</a
-          >
-        </p>
+        <BackProjBt/>
       </div>
     </div>
   </div>

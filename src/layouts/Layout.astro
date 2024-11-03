@@ -22,7 +22,7 @@ const pageUrl = `https://www.pizza-punk.com${Astro.url.pathname}`;
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>{title}</title>
-    <link rel="icon" href="./favicon.svg" type="image/svg+xml">
+    <link rel="icon" href="https://www.pizza-punk.com/favicon.svg" type="image/svg+xml">
     <!-- Basic Open Graph Tags -->
     <meta property="og:type" content={type} />
     <meta property="og:url" content={pageUrl} />
@@ -117,7 +117,7 @@ const pageUrl = `https://www.pizza-punk.com${Astro.url.pathname}`;
   >
     <div
       id="backToTop"
-      class="text-3xl md:text-4xl fixed right-1 bottom-2 md:bottom-5 md:right-5 z-50 hover:animate-ping"
+      class="text-3xl md:text-4xl fixed right-1 bottom-2 md:bottom-5 md:right-5 z-50 active:animate-ping"
     >
       <a href="#top"
         ><i
@@ -169,7 +169,8 @@ const pageUrl = `https://www.pizza-punk.com${Astro.url.pathname}`;
   backToTopButton.style.display = "none";
 
   window.addEventListener("scroll", () => {
-    if (window.scrollY > 100) {
+    const scrollThreshold = window.innerHeight*0.5;
+    if (window.scrollY > scrollThreshold) {
       // Show after scrolling 100px
       backToTopButton.style.display = "block"; // Make it visible
     } else {

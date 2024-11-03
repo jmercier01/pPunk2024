@@ -2,23 +2,34 @@ let tl = gsap.timeline({
     scrollTrigger: {
         // markers:true,
         trigger: "#nameProject",
-        pin: true,
-        start: "center center-=10%",
-        end: "center center-=50%",
+        pin: "#nameProject",
+        start: "center center",
+        end: "center center-=10%",
         scrub: 3,
         snap: {
             snapTo: 'labels',
-            duration: { min: 0.2, max: 0.5 },
-            delay: 0.1
+            duration: { min: 1, max: 2 },
         }
     },
 });
-
+gsap.set("#details",{opacity:0, yPercent:200})
 tl.addLabel('start')
-tl.from("#ppunk", { rotation: 45, scale: 7, ease: "power.in" });
-tl.from("#nameProject", { scale: 0.5 }, "<");
-tl.from("#hero", { scale: 0.5, ease: "power.in" }, "<");
+tl.to("#ppunk", {rotation: 0, scale: 1.25, xPercent : "-=105", yPercent : -10, ease: "power.in" });
+tl.to("#nameProject", { scale: 1 }, "<");
+tl.to("#hero", { scale: 1, ease: "power.in" }, "<");
+tl.to("#details", {yPercent:0, delay:1, duration:2, opacity:1, ease: "power.in" });
 tl.addLabel('end')
+
+if (window.scrollY === 0) {
+    // Déclencher l'animation avec GSAP après un délai de 2 secondes
+    gsap.to(window, {
+      delay: 2,
+      duration: 2,
+      scrollTo: { y: '#nameProject', autoKill: true },
+      ease: "power4.out"
+    });
+  }
+// gsap.to(window,{delay:2, duration:2,scrollTo:{y:'#nameProject', autoKill: true  },ease: "power4.out"})
 
 
 

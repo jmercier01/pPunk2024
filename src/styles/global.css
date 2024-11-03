@@ -10,24 +10,21 @@ html, body {
 @layer base {
   a:not(.nav a) {
     @apply text-accent font-bold;
-    /* Couleur bleue et souligné */
     transition: color 0.3s ease;
-    /* Transition douce pour le survol */
   }
-
-  a:hover:not(.nav a:hover)
-  a:hover:not(#cards a:hover) {
+  a:hover:not(#projects a):not(.nav a):not(#cards a) {
     @apply text-accent underline;
-    /* Couleur différente au survol */
   }
 
+  
+  a:focus:not(#projects a:focus)
   a:focus:not(.nav a:focus) {
     @apply text-accent font-bold ;
-    /* Anneau de focus pour l'accessibilité */
   }
+  
 
   code {
-    @apply font-code font-light bg-zinc-50 dark:bg-zinc-700 md:text-xs leading-none inline-flex p-3;
+    @apply font-code font-normal tracking-tighter text-jour dark:text-nuit bg-zinc-700 dark:bg-zinc-50 md:text-xs leading-none inline-flex px-3 py-1;
   }
 
   p,
@@ -38,11 +35,11 @@ html, body {
   h6,
   ul,
   ol {
-    @apply text-balance max-w-prose;
+    @apply md:text-balance md:max-w-prose;
   }
 
   ol>li {
-    @apply list-decimal list-inside
+    @apply list-decimal list-outside ml-8
   }
 
   #navBarNavMobile,#navBarNav{
@@ -101,6 +98,7 @@ html, body {
   
 
   /* PROJECTS */
+
   #projects{
     @apply mt-8 md:mt-40 md:mx-auto container md:w-3/4 font-extralight leading-8 md:px-8 pt-3 rounded-3xl justify-center;
   }
@@ -120,6 +118,12 @@ html, body {
   #projects ul>li{
     @apply list-disc list-inside
   }
+  #projects #projetResume {
+    @apply list-none pl-0 ml-0
+  }
+  #projects #projetResume li{
+    @apply list-none
+  }
 
   
   #projects em {
@@ -128,10 +132,10 @@ html, body {
   #projects h3,
   #projects h4,
   #projects h5{
-    @apply my-12;
+    @apply my-12 capitalize;
   }
   #projects h6{
-    @apply mt-6 mb-3;
+    @apply mt-6 mb-3 capitalize; 
   }
   #projects h3 {
     @apply text-4xl font-syne font-bold
@@ -145,16 +149,23 @@ html, body {
   #projects h6 {
     @apply text-xl; 
   }
-  /* #projects h6 {
-    @apply mb-4 text-base; 
-  } */
+
   #projects em {
     @apply block mt-16;
   }
   #projects details h6{
     @apply text-lg mt-0
   }
-  /* #projects #intro{
-    @apply
-  } */
+  #projects a{
+    @apply font-medium text-nuit dark:text-jour
+  }
+  #projects a:link {
+    @apply  underline;
+  }
+  #projects a:hover {
+    @apply  text-accent;
+  } 
+  #projetResume a{
+    @apply text-nuit;
+  }
 }
